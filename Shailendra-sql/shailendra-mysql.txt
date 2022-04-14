@@ -1,0 +1,26 @@
+create databse emplyoee;
+use employee;
+create table empdetail(
+
+id int(20) not null primary key auto_increment,
+name varchar(45),
+age int(10)
+);
+
+alter table  empdetail add column city varchar(45);
+
+insert into empdetail(name,age) values 
+("shailendra ",22,"indore"),
+("Vijay ",22,"pune"),
+("ajay ",22,"banglore"),
+("vakil ",22,"jaipur"),
+("raju goad",22,"LA");
+
+select * from emp_detail;
+select name from emp_detail;
+
+update empdetail set city='Hydrabad' where id='1';
+
+
+
+

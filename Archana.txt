@@ -1,0 +1,29 @@
+CREATE TABLE emp(
+ Name VARCHAR(20),
+ Id VARCHAR(20),
+ Address VARCHAR(20),
+ Desigination VARCHAR(20)
+ );
+ 
+ 
+ INSERT INTO EMP VALUES("Archana","AG67741","HYD","Jr.software Engineer");
+ INSERT INTO EMP VALUES("Anusha","AG67777","HYD","Sr.software");
+ INSERT INTO EMP VALUES("Akhila","AG6555","SDPT","Associate software");
+ INSERT INTO EMP VALUES("Aradhya","AG1234","SDPT","IT");
+ INSERT INTO EMP VALUES("Akshay","AG9987","NRPT","Manager");
+ 
+
+
+UPDATE EMP SET Name="Akhila Reddy" WHERE Id="AG6555";
+UPDATE EMP SET Name="Akshay Reddy" WHERE Id="AG9987";
+
+DELETE FROM EMP WHERE Id="AG67777";
+
+
+ALTER TABLE EMP ADD SALARY VARCHAR(20);
+
+UPDATE EMP SET SALARY="30000" WHERE Id="AG67741";
+
+DROP TABLE EMP;
+
+select * from EMP;

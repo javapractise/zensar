@@ -1,0 +1,30 @@
+1.For creating a schema
+create schema employee
+
+2. To create a table
+create table employee.emp(emp_id INT NOT NULL,emp_name varchar(45) NOT NULL, Address varchar(45) NOT NULL, department varchar(45)NOT NULL,PRIMARY KEY(emp_id)
+
+3.To insert values in to the emp table
+insert into employee emp(emp_id, emp_name, address, department)
+values(1,"Jitendra",Mumbai,"IT")
+
+insert into employee emp(emp_id, emp_name, address, department)
+values(1,"Abhinav",pune,"Finance")
+
+insert into employee emp(emp_id, emp_name, address, department)
+values(1,"Rajesh",Hyd,"Marketing")
+
+4. To check the values inserted into the tables
+Select * From employee.emp
+
+5. To update the department IT whose emp_id is 1
+update employee.emp 
+set department= "Teaching"
+WHERE emp_id=1;
+
+6 To check the update
+Select * from employee.emp
+
+7. To Delete record whose emp_id is 2
+Delete from employee.emp where emp_id=2
+

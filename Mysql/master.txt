@@ -1,0 +1,15 @@
+CREATE TABLE Student (
+  Id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  gender TEXT NOT NULL
+);
+
+
+INSERT INTO Student VALUES (1, 'Alex', 'M');
+INSERT INTO Student VALUES (2, 'Siri', 'F');
+
+SELECT * FROM Student;
+INSERT INTO Student VALUES (3, 'Revathi', 'F');
+SELECT * FROM Student;
+delete from Student where name= 'Alex';
+SELECT * FROM Student;

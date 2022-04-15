@@ -1,0 +1,84 @@
+1. Employee records where salary of employee is greater than 57 k and less than 75 k?
+create database employee;
+create table employee.employee_info(emp_id int, name varchar(20), designation varchar(20), salary int);
+insert into employee.employee_info(emp_id, name, designation, salary) values(4, "bhargav", "sql devloper", 50000);
+select * from employee.employee_info;
+select * from employee.employee_info where salary >= 57000 and salary <= 75000;
+=========================================================================================================================================================
+2. What is query to find out fourth highest salary of employee?
+create database employee;
+create table employee.employee_info(emp_id int, name varchar(20), designation varchar(20), salary int);
+insert into employee.employee_info(emp_id, name, designation, salary) values(4, "bhargav", "sql devloper", 50000);
+select * from employee.employee_info;
+select distinct salary from employee.employee_info e1 where 4 = (select count(distinct Salary) from employee.employee_info e2 where e1.salary<=e2.salary);
+==========================================================================================================================================================
+3. What is query to find out the Students whose names starts with S,K,U?
+create database student;
+create table student.student_info(stu_id int, name varchar(20), percentage int);
+insert into student.student_info(stu_id, name, percentage) values(6, "saurabh", 94);
+select * from student.student_info;
+select * from student.student_info where name LIKE 'S%' OR name LIKE 'K%' OR name LIKE 'U%';
+==========================================================================================================================================================
+4. How to get information of students who is not assingned to any class.
+create database student;
+create table student.student_info(roll_no int, name varchar(20));
+insert into student.student_info(roll_no, name) values(7, "prashant");
+select * from student.student_info;
+
+create table student.student_class(roll_no int, name varchar(20));
+insert into student.student_class(roll_no, name) values(5, "zuber");
+select * from student.student_class;
+
+select * from student.student_info where roll_no Not in (select roll_no from student.student_class);
+=========================================================================================================================================================
+5. How to fetch  monthly Salary of Employee if annual salary is given?
+create database employee;
+create table employee.employee_info(emp_id int, name varchar(20), salary int, DOJ year);
+insert into employee.employee_info(emp_id, name, salary, DOJ) values(4, "govind", 450000, '2020');
+select * from employee.employee_info;
+select name, salary/12 as 'Monthly Salary' from employee.employee_info;
+========================================================================================================================================================
+6. How to get 3 Highest salaries records from Employee table?
+create database employee;
+create table employee.employee_info(emp_id int, name varchar(20), designation varchar(20), salary int);
+insert into employee.employee_info(emp_id, name, designation, salary) values(4, "bhargav", "sql devloper", 50000);
+select * from employee.employee_info;
+select distinct salary from employee.employee_info a 
+where 3>= (select count(distinct salary) from employee.employee_info b where b.salary >= a.salary) 
+order by a.salary desc;
+========================================================================================================================================================
+7. How to fetch 3rd highest salary using Rank Function?
+create database employee;
+create table employee.employee_info(emp_id int, name varchar(20), salary int, DOJ year);
+insert into employee.employee_info(emp_id, name, salary, DOJ) values(4, "mahebub", 40000, '2022');
+select * from employee.employee_info;
+select emp_id, name, salary, rank() OVER (partition by emp_id order by salary desc) rank FROM employee.employee_info where rank<=3;
+========================================================================================================================================================
+8. What is SQL Query to find maximum salary of each department?
+create database employee;
+create table employee.employee_info(emp_id int, name varchar(20), salary int, department varchar(20));
+insert into employee.employee_info(emp_id, name, salary, department) values(6, "zuber", 43000, "HR");
+select * from employee.employee_info;
+SELECT department, MAX(salary) FROM employee.employee_info GROUP BY department;
+========================================================================================================================================================
+9. Display the name of employees who have joined in 2016 and salary is greater than 10000?
+create database employee;
+create table employee.employee_info(emp_id int, name varchar(20), salary int, DOJ year);
+insert into employee.employee_info(emp_id, name, salary, DOJ) values(6, "govind", 35000, 2020);
+select * from employee.employee_info;
+select name,salary,DOJ from employee.employee_info where DOJ like 2016 and salary>10000;
+========================================================================================================================================================
+10. How to Find the Joining date of Employee in YYYY-DAY-Date format.
+create database employee;
+create table employee.employee_info(emp_id int, name varchar(20), salary int, DOJ date);
+insert into employee.employee_info(emp_id, name, salary, DOJ) values(3, "sagar", 40000, '2021-12-15');
+select * from employee.employee_info;
+select name, date_format(DOJ,"%Y") JoinYear , date_format(DOJ,"%W") Day, date_format(DOJ,"%e") Date from employee.employee_info;
+========================================================================================================================================================
+11. Write an SQL query to fetch duplicate records from EmployeeDetails.
+create database employee;
+create table employee.employee_info(emp_id int, name varchar(20), salary int, DOJ year);
+insert into employee.employee_info(emp_id, name, salary, DOJ) values(4, "mahebub", 40000, '2022');
+select * from employee.employee_info;
+select name,salary, count(salary) from employee.employee_info group by salary;
+********************************************************************************************************************************************************

@@ -1,0 +1,9 @@
+ create table Employee(name varchar(20), age int);
+            
+        insert into Employee values("bhushitha",22);
+        insert into Employee values("priya", 25);
+        select * from Employee;
+        update Employee set name="divya" where age=25;
+        delete from Employee where name="divya";
+        drop table Employee ;
+        

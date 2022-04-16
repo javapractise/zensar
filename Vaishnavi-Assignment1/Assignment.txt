@@ -1,0 +1,57 @@
+
+1.Employee records where salary of employee is greater than 57 k and less than 75 k?
+
+SELECT ID
+FROM Employees
+WHERE salary>57000 AND salary < 75000;
+
+2.What is query to find out fourth highest salary of employee?
+
+Select Salary from Employees order by Salary DESC limit 3,1;
+
+
+3.What is query to find out the Students whose names starts with S,K,U?
+SELECT * FROM Employees WHERE Name LIKE 'S%' OR Name LIKE 'k%' OR Name LIKE 'R%' 
+
+4.How to get information of students who is not assingned to any class.
+SELECT*
+ FROM employees
+ WHERE ID IS NULL;
+
+5.How to fetch  monthly Salary of Employee if annual salary is given?
+
+SELECT Name, round(Salary/12,2) AS 'Monthly Salary' ,
+Salary AS 'Annual Salary' FROM employees
+
+6.How to get 3 Highest salaries records from Employee table?
+
+Select Name, Salary from employees
+    where Salary >=(select max(Salary) from employees
+    where Salary < (select max(Salary) from employees
+    where Salary < (select max(Salary)from employees)))
+    order by Salary;
+7.How to fetch 3rd highest salary using Rank Function?
+SELECT * FROM 
+     (
+      SELECT employees, Name, Salary,
+      RANK()(ORDER BY Salary DESC) EMPRANK
+      FROM employees
+     )
+    WHERE emprank <= 3;
+8.What is SQL Query to find maximum salary of each department?
+ SELECT ID, MAX(Salary) FROM employees GROUP BY Name
+
+9.Display the name of employees who have joined in 2016 and salary is greater than 10000?
+SELECT Name,Salary FROM employees WHERE year(Date) = 2016 and Salary >= 10000
+
+10.How to Find the Joining date of Employee in YYYY-DAY-Date format.
+SELECT ID
+FROM Employee
+WHERE HireDate = '20081207';
+
+11.Write an SQL query to fetch duplicate records from EmployeeDetails.
+SELECT Name, Salary, COUNT(*)
+FROM employees
+GROUP BY Name
+HAVING COUNT(*) > 1
+

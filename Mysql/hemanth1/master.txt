@@ -1,0 +1,11 @@
+1a-->select * from employee where salary>57000 or salary<75000;
+2a-->select salary from employee order by salary limit 3,1;
+3a-->select empname from employee where empname like 's%' or empname like 'k%' or empname like 'u%';
+4a-->select class from employee where student=null;
+5a-->select Employee_name,Salary/12 as ‘Monthly Salary’ from employee;
+6a-->select * from employee order by salary limit 3;
+7a-->select * from (select *,DENSE_RANK() over (order by emp_sal desc)as rank from employee)t where rank=3
+8a-->select max(salary),deptid from employee group by deptid;
+9a-->select empname from employee where hiredate=2016 and salary >=10000;
+10a-->select empname,TO_CHAR(hiredate,'yyyy-DAY-DATE'),"hiredate" from employee;
+11a-->select emp_detail from employee group by emp_detail having count(*)>=1;

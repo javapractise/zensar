@@ -1,0 +1,13 @@
+1-- Select * from employee where between salary >57000 and salary<75000;
+2-- Select salary salary from employee order by salary limit 3,1;
+3-- Select empname from employee where empname like 's%' or empname like 'k%' or empname like 'u%';
+4-- Select class from employee where student=null;
+5-- Select Employee_name, Salary/12 as 'Monthly Salary' from employee;
+6-- Select * from employee order by salary limit 3;
+7-- Select * from (select SupplierID, rank()
+over (over by price desc) r from Products)
+where r=3;
+8-- Select * max(salary), from employee GROUP by dept;
+9-- select * from Employee where year(Date_of_join)=2016 and salary >=10000;
+10-- select empname, TO_CHAR(hiredate,'YYYY-DAY-DATE'),"hiredate" from employee;
+11-- Select emp_detail from employee group by emp_detail having count(*)>=1; 

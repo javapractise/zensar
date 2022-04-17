@@ -1,0 +1,35 @@
+1.Employee records where salary of employee is greater than 57 k and less than 75 k?
+  select * from employee where salary>57000 or salary<75000;
+
+2.What is query to find out fourth highest salary of employee?
+  select salary from employee order by salary limit 3,1;
+
+3.What is query to find out the Students whose names starts with S,K,U?
+  select empname from employee where empname like 's%' or empname like 'k%' or empname like 'u%';
+
+4.How to get information of students who is not assingned to any class.
+   select class from employee where student=null;
+
+5.How to fetch  monthly Salary of Employee if annual salary is given?
+  select Employee_name,Salary/12 as ‘Monthly Salary’ from employee;
+
+6.How to get 3 Highest salaries records from Employee table?
+  select * from employee order by salary limit 3;
+   
+7.How to fetch 3rd highest salary using Rank Function?
+  select * from (select *,DENSE_RANK() over (order by emp_sal desc)as rank from employee)t where rank=3
+  
+8.What is SQL Query to find maximum salary of each department?
+ select max(salary),deptid from employee group by deptid;
+
+9.Display the name of employees who have joined in 2016 and salary is greater than 10000?
+  select empname from employee where hiredate=2016 and salary >=10000;
+
+10.How to Find the Joining date of Employee in YYYY-DAY-Date format.
+  select empname,TO_CHAR(hiredate,'yyyy-DAY-DATE'),"hiredate" from employee;
+
+11.Write an SQL query to fetch duplicate records from EmployeeDetails.
+  select emp_detail from employee group by emp_detail having count(*)>=1;
+
+
+

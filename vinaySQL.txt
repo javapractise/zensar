@@ -54,6 +54,9 @@ CREATE TABLE emp(
 
 7. How to fetch 3rd highest salary using Rank Function?
 
+select * from (SELECT DENSE_RANK() OVER (ORDER BY SAL desc) my_rank,empId,sal,name FROM EMPLOYEE)
+where my_rank<=3;
+
 8.What is SQL Query to find maximum salary of each department?
 
 select MAX(SALARY) from emp;

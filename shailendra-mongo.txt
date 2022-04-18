@@ -1,16 +1,22 @@
 
 use shailendra;
-db.shailendra.insertOne({nane:"shailendra",location:"pune"})
+db.shailendra.insertOne({name:"shailendra",location:"pune"})
+
 db.shailendra.find();
-db.employees.insertMany([
+db.shailendra.insertMany([
   { name: 'Clark', location: 'pune' },
   { name: 'Dave', location: 'indore' },
    { name: 'Raju', location: 'Chennai' },
-  { name: 'Jya', location: 'hyd' }
-
+  { name: 'Jya', location: 'hyd' },
+  {name: 'raja',location:'indore'}
 ]);
-db.employees.update(   
+db.shailendra.updateOne(   
   {name:"Dave" },
   { $set: { name: "Dev" } }
 );
-db.employees.deleteOne({location:"hyd"})
+db.shailendra.deleteOne({location:"hyd"})
+db.shailendra.deleteMany({location:"indore"})
+db.shailendra.updateMany(   
+  {location:"indore" },
+  { $set: { location: "pune" } }
+);

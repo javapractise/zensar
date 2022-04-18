@@ -1,0 +1,102 @@
+> show dbs
+admin     0.000GB
+config    0.000GB
+employee  0.000GB
+local     0.000GB
+test      0.000GB
+
+> use employee
+switched to db employee
+
+> show collections
+employe_info
+
+> db.employee.insertOne({empId:5,name:"paul",department:"testing",salary:38000});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("625d4273bc271be85d9dbc17")
+}
+
+> db.employee.insertMany([{empId:1,name:"smith",department:"development",salary:40000},{empId:2,name:"john",department:"testing",salary:35000},{empId:3,name:"roy",department:"marketing",salary:25000},{empId:4,name:"henry",department:"development",salary:28000}]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("625d442fbc271be85d9dbc18"),
+                ObjectId("625d442fbc271be85d9dbc19"),
+                ObjectId("625d442fbc271be85d9dbc1a"),
+                ObjectId("625d442fbc271be85d9dbc1b")
+        ]
+}
+
+> db.employee.find();
+{ "_id" : ObjectId("625d40ac73364860afcc65b5"), "empId" : 5, "name" : "paul", "department" : "testing", "salary" : 38000 }
+{ "_id" : ObjectId("625d4273bc271be85d9dbc17"), "empId" : 5, "name" : "paul", "department" : "testing", "salary" : 38000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc18"), "empId" : 1, "name" : "smith", "department" : "development", "salary" : 40000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc19"), "empId" : 2, "name" : "john", "department" : "testing", "salary" : 35000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc1a"), "empId" : 3, "name" : "roy", "department" : "marketing", "salary" : 25000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc1b"), "empId" : 4, "name" : "henry", "department" : "development", "salary" : 28000 }
+
+> db.employee.find({department:"testing"});
+{ "_id" : ObjectId("625d40ac73364860afcc65b5"), "empId" : 5, "name" : "paul", "department" : "testing", "salary" : 38000 }
+{ "_id" : ObjectId("625d4273bc271be85d9dbc17"), "empId" : 5, "name" : "paul", "department" : "testing", "salary" : 38000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc19"), "empId" : 2, "name" : "john", "department" : "testing", "salary" : 35000 }
+
+> db.employee.updateMany({name:"smith"},{$set:{name:"mahebub"}});
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+
+> db.employee.find();
+{ "_id" : ObjectId("625d40ac73364860afcc65b5"), "empId" : 5, "name" : "paul", "department" : "testing", "salary" : 38000 }
+{ "_id" : ObjectId("625d4273bc271be85d9dbc17"), "empId" : 5, "name" : "paul", "department" : "testing", "salary" : 38000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc18"), "empId" : 1, "name" : "mahebub", "department" : "development", "salary" : 40000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc19"), "empId" : 2, "name" : "john", "department" : "testing", "salary" : 35000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc1a"), "empId" : 3, "name" : "roy", "department" : "marketing", "salary" : 25000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc1b"), "empId" : 4, "name" : "henry", "department" : "development", "salary" : 28000 }
+
+> db.employee.deleteMany({name:"paul"});
+{ "acknowledged" : true, "deletedCount" : 2 }
+
+> db.employee.find();
+{ "_id" : ObjectId("625d442fbc271be85d9dbc18"), "empId" : 1, "name" : "mahebub", "department" : "development", "salary" : 40000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc19"), "empId" : 2, "name" : "john", "department" : "testing", "salary" : 35000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc1a"), "empId" : 3, "name" : "roy", "department" : "marketing", "salary" : 25000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc1b"), "empId" : 4, "name" : "henry", "department" : "development", "salary" : 28000 }
+
+> db.employee.find().pretty()
+{
+        "_id" : ObjectId("625d442fbc271be85d9dbc18"),
+        "empId" : 1,
+        "name" : "mahebub",
+        "department" : "development",
+        "salary" : 40000
+}
+{
+        "_id" : ObjectId("625d442fbc271be85d9dbc19"),
+        "empId" : 2,
+        "name" : "john",
+        "department" : "testing",
+        "salary" : 35000
+}
+{
+        "_id" : ObjectId("625d442fbc271be85d9dbc1a"),
+        "empId" : 3,
+        "name" : "roy",
+        "department" : "marketing",
+        "salary" : 25000
+}
+{
+        "_id" : ObjectId("625d442fbc271be85d9dbc1b"),
+        "empId" : 4,
+        "name" : "henry",
+        "department" : "development",
+        "salary" : 28000
+}
+
+> db.employee.find({$or:[{department:"marketing"},{department:"testing"}]});
+{ "_id" : ObjectId("625d442fbc271be85d9dbc19"), "empId" : 2, "name" : "john", "department" : "testing", "salary" : 35000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc1a"), "empId" : 3, "name" : "roy", "department" : "marketing", "salary" : 25000 }
+
+> db.employee.find({department:"marketing",department:"testing"});
+{ "_id" : ObjectId("625d442fbc271be85d9dbc19"), "empId" : 2, "name" : "john", "department" : "testing", "salary" : 35000 }
+
+
+

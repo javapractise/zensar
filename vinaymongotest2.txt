@@ -1,0 +1,139 @@
+show dbs;
+Training  0.000GB
+admin     0.000GB
+config    0.000GB
+> use Training;
+switched to db Training
+> show collections;
+Employees
+
+> db.Employees.find();
+{ "_id" : 1, "name" : "vinay", "department" : "Dseigning", "salary" : 60000 }
+{ "_id" : 2, "name" : "hani", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 3, "name" : "deepu", "department" : "Testing", "salary" : 55000 }
+{ "_id" : 4, "name" : "teja", "department" : "Testing", "salary" : 75000 }
+{ "_id" : 5, "name" : "cherry", "department" : "Developing", "salary" : 82000 }
+> db.Employees.insertOne({_id:6, name:"bhanu", department:"Production", salary:95000});
+{ "acknowledged" : true, "insertedId" : 6 }
+> db.Employees.find();
+{ "_id" : 1, "name" : "vinay", "department" : "Dseigning", "salary" : 60000 }
+{ "_id" : 2, "name" : "hani", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 3, "name" : "deepu", "department" : "Testing", "salary" : 55000 }
+{ "_id" : 4, "name" : "teja", "department" : "Testing", "salary" : 75000 }
+{ "_id" : 5, "name" : "cherry", "department" : "Developing", "salary" : 82000 }
+{ "_id" : 6, "name" : "bahu", "department" : "Production", "salary" : 95000}
+> db.Employees.insertMany([{_id:7, name:"Krishna", department:"Production", salary:95000}, {_id:8, name:"vamsi", department:"Production", salary:75000}]);
+{ "acknowledged" : true, "insertedIds" : [ 7, 8 ] }
+> db.Employees.find();
+{ "_id" : 1, "name" : "vinay", "department" : "Dseigning", "salary" : 60000 }
+{ "_id" : 2, "name" : "hani", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 3, "name" : "deepu", "department" : "Testing", "salary" : 55000 }
+{ "_id" : 4, "name" : "teja", "department" : "Testing", "salary" : 75000 }
+{ "_id" : 5, "name" : "cherry", "department" : "Developing", "salary" : 82000 }
+{ "_id" : 6, "name" : "bahu", "department" : "Production", "salary" : 95000}
+{ "_id" : 7, "name" : "Krishna", "department" : "Production", "salary" : 95000 }
+{ "_id" : 8, "name" : "vamsi", "department" : "Production", "salary" : 75000 }
+> db.Employees.find({department: "Production"});
+{ "_id" : 6, "name" : "bahu", "department" : "Production", "salary" : 95000 }
+{ "_id" : 7, "name" : "Krishna", "department" : "Production", "salary" : 95000 }
+{ "_id" : 8, "name" : "vamsi", "department" : "Production", "salary" : 75000 }
+> db.Employees.updateOne({_id:8}, {$set: {department: "Designing"}});
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.Employees.find();
+{ "_id" : 1, "name" : "vinay", "department" : "Dseigning", "salary" : 60000 }
+{ "_id" : 2, "name" : "hani", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 3, "name" : "deepu", "department" : "Testing", "salary" : 55000 }
+{ "_id" : 4, "name" : "teja", "department" : "Testing", "salary" : 75000 }
+{ "_id" : 5, "name" : "cherry", "department" : "Developing", "salary" : 82000 }
+{ "_id" : 6, "name" : "bahu", "department" : "Production", "salary" : 95000}
+{ "_id" : 7, "name" : "Krishna", "department" : "Production", "salary" : 95000 }
+{ "_id" : 8, "name" : "vamsi", "department" : "Production", "Designing" : 75000 }
+> db.Employees.updateMany({salary:75000}, {$set: {salary: 87000}});
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+> db.Employees.find();
+{ "_id" : 1, "name" : "vinay", "department" : "Dseigning", "salary" : 60000 }
+{ "_id" : 2, "name" : "hani", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 3, "name" : "deepu", "department" : "Testing", "salary" : 55000 }
+{ "_id" : 4, "name" : "teja", "department" : "Testing", "salary" : 87000 }
+{ "_id" : 5, "name" : "cherry", "department" : "Developing", "salary" : 82000 }
+{ "_id" : 6, "name" : "bahu", "department" : "Production", "salary" : 95000}
+{ "_id" : 7, "name" : "Krishna", "department" : "Production", "salary" : 95000 }
+{ "_id" : 8, "name" : "vamsi", "department" : "Production", "Designing" : 87000 }
+> db.Employees.find().pretty;
+function() {
+    this._prettyShell = true;
+    return this;
+}
+> db.Employees.find().pretty();
+{
+        "_id" : 1,
+        "name" : "vinay",
+        "department" : "Dseigning",
+        "salary" : 60000
+}
+{
+        "_id" : 2,
+        "name" : "hani",
+        "department" : "Developing",
+        "salary" : 40000
+}
+{
+        "_id" : 3,
+        "name" : deepu",
+        "department" : "Testing",
+        "salary" : 55000
+}
+{
+        "_id" : 4,
+        "name" : "teja",
+        "department" : "Testing",
+        "salary" : 87000
+}
+{
+        "_id" : 5,
+        "name" : "cherry",
+        "department" : "Production",
+        "salary" : 82000
+}
+{
+        "_id" : 6,
+        "name" : "bahu",
+        "department" : "Production",
+        "salary" : 95000
+}
+{
+        "_id" : 7,
+        "name" : "Krishna",
+        "department" : "Production",
+        "salary" : 95000
+}
+{
+        "_id" : 8,
+        "name" : "vamsi",
+        "department" : "Designing",
+        "salary" : 87000
+}
+> db.Employees.deleteOne({_id:8});
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.Employees.find();
+{ "_id" : 1, "name" : "vinay", "department" : "Dseigning", "salary" : 60000 }
+{ "_id" : 2, "name" : "hani", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 3, "name" : "deepu", "department" : "Testing", "salary" : 55000 }
+{ "_id" : 4, "name" : "teja", "department" : "Testing", "salary" : 87000 }
+{ "_id" : 5, "name" : "cherry", "department" : "Developing", "salary" : 82000 }
+{ "_id" : 6, "name" : "bahu", "department" : "Production", "salary" : 95000}
+{ "_id" : 7, "name" : "Krishna", "department" : "Production", "salary" : 95000 }
+> db.Employees.deleteMany({department: "Production"});
+{ "acknowledged" : true, "deletedCount" : 2 }
+> db.Employees.find();
+{ "_id" : 1, "name" : "vinay", "department" : "Dseigning", "salary" : 60000 }
+{ "_id" : 2, "name" : "hani", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 3, "name" : "deepu", "department" : "Testing", "salary" : 55000 }
+{ "_id" : 4, "name" : "teja", "department" : "Testing", "salary" : 87000 }
+{ "_id" : 5, "name" : "cherry", "department" : "Developing", "salary" : 82000 }
+> db.Employees.find({$or: [{department:"Developing"}, {department:"Testing"}]});
+{ "_id" : 1, "name" : "vinay", "department" : "Dseigning", "salary" : 60000 }
+{ "_id" : 2, "name" : "hani", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 3, "name" : "deepu", "department" : "Testing", "salary" : 55000 }
+{ "_id" : 4, "name" : "teja", "department" : "Testing", "salary" : 87000 }
+{ "_id" : 5, "name" : "cherry", "department" : "Developing", "salary" : 82000 }

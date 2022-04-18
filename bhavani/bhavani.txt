@@ -1,0 +1,11 @@
+1)select * from employee where sal >5700 or sal <7500;
+2)select sal from employee order by sal desc limit 3,1;
+3)select ename from employee where ename like 's%' or ename like 'k%' or ename like 'u%';
+4)select class from employee where student is null;
+5)select Employee_name,Salary/12 as ‘Monthly Salary’ from employee;
+6)select * from (select * from emp order by sal desc) where rownum<=3 order by salary;
+7)select * from (select *,DENSE_RANK() over (order by emp_sal desc)as rank from employee)t where rank=3
+8)select max(salary),deptid from employee group by deptid;
+9)select ename from employee where hiredate=2016 and sal >=10000;
+10)select ename,TO_CHAR(hiredate,'yyyy-DAY-DATE'),"hiredate" from emp;
+11)select emp_detail from employee group by emp_detail having count(*)>=1;

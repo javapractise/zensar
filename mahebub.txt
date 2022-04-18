@@ -1,0 +1,17 @@
+create database employee;
+
+create table employee.employee_info(name varchar(20), age int, city varchar(20), designation varchar(20));
+
+insert into employee.employee_info(name, age, city, designation) values ("govind", 27, "bangalore", "java full stack");
+
+select * from employee.employee_info;
+
+update employee.employee_info set name="sayyad" WHERE city="pune";
+
+alter table employee.employee_info add emp_id int;
+
+update employee.employee_info set emp_id=2 WHERE name="sagar";
+
+delete from employee.employee_info where emp_id=1;
+
+drop table employee.employee_info;

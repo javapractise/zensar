@@ -1,0 +1,64 @@
+ use employeedb
+switched to db employeedb
+> db
+employeedb
+ db.employeedb.insertOne({Name:"Archana",dept:"dev",salary:"22222",Address:"Hyd"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("625d3f25606aae14ff10cffa")
+}
+ db.employeedb.insertMany([{Name:"Anusha",dept:"hr",salary:"33333",Address:"Nrpt"},{Name:"Akhila",dept:"dev",salary:"4444",Address:"Nrpt"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("625d4065606aae14ff10cffb"),
+                ObjectId("625d4065606aae14ff10cffc")
+        ]
+}
+db.employeedb.find({Name:"Archana"})
+{ "_id" : ObjectId("625d3f25606aae14ff10cffa"), "Name" : "Archana", "dept" : "dev", "salary" : "22222", "Address" : "Hyd" }
+> db.employeedb.updateMany({Address:"Nrpt"},{$set:{Address:"Sdpt"}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+> db.employeedb.find().pretty()
+{
+        "_id" : ObjectId("625d3f25606aae14ff10cffa"),
+        "Name" : "Archana",
+        "dept" : "dev",
+        "salary" : "22222",
+        "Address" : "Hyd"
+}
+{
+        "_id" : ObjectId("625d4065606aae14ff10cffb"),
+        "Name" : "Anusha",
+        "dept" : "hr",
+        "salary" : "33333",
+        "Address" : "Sdpt"
+}
+{
+        "_id" : ObjectId("625d4065606aae14ff10cffc"),
+        "Name" : "Akhila",
+        "dept" : "dev",
+        "salary" : "4444",
+        "Address" : "Sdpt"
+}
+> db.employeedb.deleteMany({Name:"Archana"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.employeedb.find({$or:[{dept:"dev"},{dept:"hr"}]})
+{ "_id" : ObjectId("625d4065606aae14ff10cffb"), "Name" : "Anusha", "dept" : "hr", "salary" : "33333", "Address" : "Sdpt" }
+{ "_id" : ObjectId("625d4065606aae14ff10cffc"), "Name" : "Akhila", "dept" : "dev", "salary" : "4444", "Address" : "Sdpt" }
+> db.employeedb.find({Address:"Sdpt",Address:"Hyd"})
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

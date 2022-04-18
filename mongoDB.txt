@@ -1,0 +1,51 @@
+> db.employee1.insertMany([{name:"xz",dept :"dev","location" : "hyd"},{name:"yz",dept :"dev","location" : "blr"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("625d3b2043d3b1c30b978830"),
+                ObjectId("625d3b2043d3b1c30b978831")
+        ]
+}
+> db.employee.insertMany([{name:"bhushitha",dept :"dev","location" : "Bangalore"},{name:"divya",dept :"IT","location" : "blr"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("625d3b8643d3b1c30b978832"),
+                ObjectId("625d3b8643d3b1c30b978833")
+        ]
+}
+>  db.employee.find({location : "Bangalore"})
+{ "_id" : ObjectId("625d3b8643d3b1c30b978832"), "name" : "bhushitha", "dept" : "dev", "location" : "Bangalore" }
+> db.employee.updateMany({name : "bhushitha"}, {$set: {name : "sandya"}})
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+>   db.employee.deleteMany({location : "blr"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+>  db.employee1.find().pretty()
+{
+        "_id" : ObjectId("625d3b2043d3b1c30b978830"),
+        "name" : "xz",
+        "dept" : "dev",
+        "location" : "hyd"
+}
+{
+        "_id" : ObjectId("625d3b2043d3b1c30b978831"),
+        "name" : "yz",
+        "dept" : "dev",
+        "location" : "blr"
+}
+> db.employee.find({$or: [{location : "blr"}, {location: "chennai"}]})
+> db.employee1.find({$or: [{location : "blr"}, {location: "chennai"}]})
+{ "_id" : ObjectId("625d3b2043d3b1c30b978831"), "name" : "yz", "dept" : "dev", "location" : "blr" }
+> db.employee1.updateMany({name :"bhushitha", "dept" : "dev", "location" : "bangolore"})
+uncaught exception: TypeError: can't convert undefined to object :
+DBCollection.prototype.updateMany@src/mongo/shell/crud_api.js:648:20
+@(shell):1:1
+> db.employee.find({location : "blr", location: "chennai"})
+> db.employee.find({location : "blr", location: "chennai"})
+>
+>
+>
+>
+> db.employee.find({$or: [{location : "blr"}, {location: "Bangalore"}]})
+{ "_id" : ObjectId("625d3b8643d3b1c30b978832"), "name" : "sandya", "dept" : "dev", "location" : "Bangalore" }
+>

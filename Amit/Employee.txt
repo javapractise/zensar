@@ -1,0 +1,50 @@
+> use Employee
+switched to db Employee
+> db.emp.insert({"name":"John","Loc":"Pune"})
+WriteResult({ "nInserted" : 1 })
+> show dbs
+Employee  0.000GB
+admin     0.000GB
+config    0.000GB
+local     0.000GB
+> show collections;
+emp
+> db.emp.find()
+{ "_id" : ObjectId("625d4fea25421edc79a87f74"), "name" : "John", "Loc" : "Pune" }
+> db.employee.insertMany({{name:"ABC", Dept:"Dev", Loc:"Pune"},{name:"XYZ", Dept:"Test", Loc:"Hyd"}, {name:"LMN", Dept:"Dev", Loc:"Mumbai"}})
+uncaught exception: SyntaxError: expected property name, got '{' :
+@(shell):1:24
+> db.employee.insertMany([{name:"ABC", Dept:"Dev", Loc:"Pune"},{name:"XYZ", Dept:"Test", Loc:"Hyd"}, {name:"LMN", Dept:"Dev", Loc:"Mumbai"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("625d50df25421edc79a87f75"),
+                ObjectId("625d50df25421edc79a87f76"),
+                ObjectId("625d50df25421edc79a87f77")
+        ]
+}
+> db.employee.find({loc:"Pune"})
+> db.employee.find({Loc:"Pune"})
+{ "_id" : ObjectId("625d50df25421edc79a87f75"), "name" : "ABC", "Dept" : "Dev", "Loc" : "Pune" }
+> db.employee.updateMany({name:"ABC"}, {$set:{name:"Amit"}})
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.employee.deleteMany({Loc:"Hyd"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.employee.find({$or: [{Loc:"Pune"}, {Loc:"PUN"}]})
+{ "_id" : ObjectId("625d50df25421edc79a87f75"), "name" : "Amit", "Dept" : "Dev", "Loc" : "Pune" }
+> db.employee.find()
+{ "_id" : ObjectId("625d50df25421edc79a87f75"), "name" : "Amit", "Dept" : "Dev", "Loc" : "Pune" }
+{ "_id" : ObjectId("625d50df25421edc79a87f77"), "name" : "LMN", "Dept" : "Dev", "Loc" : "Mumbai" }
+> db.employee.find().pretty()
+{
+        "_id" : ObjectId("625d50df25421edc79a87f75"),
+        "name" : "Amit",
+        "Dept" : "Dev",
+        "Loc" : "Pune"
+}
+{
+        "_id" : ObjectId("625d50df25421edc79a87f77"),
+        "name" : "LMN",
+        "Dept" : "Dev",
+        "Loc" : "Mumbai"
+}

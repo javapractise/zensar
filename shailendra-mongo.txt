@@ -1,0 +1,22 @@
+
+use shailendra;
+db.shailendra.insertOne({name:"shailendra",location:"pune"})
+
+db.shailendra.find();
+db.shailendra.insertMany([
+  { name: 'Clark', location: 'pune' },
+  { name: 'Dave', location: 'indore' },
+   { name: 'Raju', location: 'Chennai' },
+  { name: 'Jya', location: 'hyd' },
+  {name: 'raja',location:'indore'}
+]);
+db.shailendra.updateOne(   
+  {name:"Dave" },
+  { $set: { name: "Dev" } }
+);
+db.shailendra.deleteOne({location:"hyd"})
+db.shailendra.deleteMany({location:"indore"})
+db.shailendra.updateMany(   
+  {location:"indore" },
+  { $set: { location: "pune" } }
+);

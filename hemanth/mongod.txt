@@ -1,0 +1,69 @@
+ db.hemanth.find().pretty()
+{
+        "_id" : ObjectId("62501b9a58ce86e5f8a666e6"),
+        "name" : "hemanth",
+        "age" : 23
+}
+{
+        "_id" : ObjectId("625d3d8e3ea8a500f427b3cd"),
+        "name" : "hari",
+        "age" : 23,
+        "banch" : "mpc"
+}
+{
+        "_id" : ObjectId("625d3e9f3ea8a500f427b3ce"),
+        "name" : "harsha",
+        "age" : 23,
+        "banch" : "mpc"
+}
+{
+        "_id" : ObjectId("625d3eb53ea8a500f427b3cf"),
+        "name" : "harsha",
+        "age" : 15,
+        "banch" : "mpc"
+}
+{
+        "_id" : ObjectId("625d4b8b3ea8a500f427b3d0"),
+        "name" : "nagarjuna",
+        "age" : 18,
+        "banch" : "mbipc"
+}
+{
+        "_id" : ObjectId("625d4ba53ea8a500f427b3d1"),
+        "name" : "chiru",
+        "age" : 19,
+        "banch" : "hec"
+}
+{
+        "_id" : ObjectId("625d4c073ea8a500f427b3d2"),
+        "name" : "nagarjuna",
+        "age" : 18,
+        "banch" : "mbipc"
+}
+{
+        "_id" : ObjectId("625d4c293ea8a500f427b3d3"),
+        "name" : "nagarjuna",
+        "age" : 18,
+        "banch" : "mbipc"
+
+ db.orders.insert({"name":"hari","age":23,"banch":"mpc"})
+WriteResult({ "nInserted" : 1 })
+> db.hemanth.insert({"name":"hari","age":23,"banch":"mpc"})
+WriteResult({ "nInserted" : 1 })
+
+db.hemanth.updateMany({name : "vasu"}, {$set: {name : "nneeharika"}})
+{ "acknowledged" : true, "matchedCount" : 0, "modifiedCount" : 0 }
+
+db.hemanth.deleteMany({branch : "mpc"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+
+
+db.hemanth.insert({"name":"chiru","age":19,"banch":"hec"})
+WriteResult({ "nInserted" : 1 })
+
+@(shell):1:1
+> db.hemanth.deleteOne({branch:"mbipc"})
+{ "acknowledged" : true, "deletedCount" : 0 }
+
+db.hemanth.deleteMany({branch:"mbipc"})
+{ "acknowledged" : true, "deletedCount" : 0 }

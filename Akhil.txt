@@ -1,0 +1,124 @@
+> show dbs;
+Training  0.000GB
+admin     0.000GB
+config    0.000GB
+> use Training;
+switched to db Training
+> show collections;
+Employees
+> db.find();
+uncaught exception: TypeError: db.find is not a function :
+@(shell):1:1
+> db.Employees.find();
+{ "_id" : 1, "name" : "Akhil", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 2, "name" : "John", "department" : "Developing", "salary" : 30000 }
+{ "_id" : 3, "name" : "Williams", "department" : "Testing", "salary" : 25000 }
+{ "_id" : 4, "name" : "Robert", "department" : "Testing", "salary" : 25000 }
+{ "_id" : 5, "name" : "Jenny", "department" : "Designing", "salary" : 22000 }
+> db.Employees.insertOne({_id:6, name:"Stephen", department:"Production", salary:25000});
+{ "acknowledged" : true, "insertedId" : 6 }
+> db.Employees.find();
+{ "_id" : 1, "name" : "Akhil", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 2, "name" : "John", "department" : "Developing", "salary" : 30000 }
+{ "_id" : 3, "name" : "Williams", "department" : "Testing", "salary" : 25000 }
+{ "_id" : 4, "name" : "Robert", "department" : "Testing", "salary" : 25000 }
+{ "_id" : 5, "name" : "Jenny", "department" : "Designing", "salary" : 22000 }
+{ "_id" : 6, "name" : "Stephen", "department" : "Production", "salary" : 25000 }
+> db.Employees.insertMany([{_id:7, name:"Krishna", department:"Production", salary:25000}, {_id:8, name:"Hema", department:"Production", salary:25000}]);
+{ "acknowledged" : true, "insertedIds" : [ 7, 8 ] }
+> db.Employees.find();
+{ "_id" : 1, "name" : "Akhil", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 2, "name" : "John", "department" : "Developing", "salary" : 30000 }
+{ "_id" : 3, "name" : "Williams", "department" : "Testing", "salary" : 25000 }
+{ "_id" : 4, "name" : "Robert", "department" : "Testing", "salary" : 25000 }
+{ "_id" : 5, "name" : "Jenny", "department" : "Designing", "salary" : 22000 }
+{ "_id" : 6, "name" : "Stephen", "department" : "Production", "salary" : 25000 }
+{ "_id" : 7, "name" : "Krishna", "department" : "Production", "salary" : 25000 }
+{ "_id" : 8, "name" : "Hema", "department" : "Production", "salary" : 25000 }
+> db.Employees.find({department: "Production"});
+{ "_id" : 6, "name" : "Stephen", "department" : "Production", "salary" : 25000 }
+{ "_id" : 7, "name" : "Krishna", "department" : "Production", "salary" : 25000 }
+{ "_id" : 8, "name" : "Hema", "department" : "Production", "salary" : 25000 }
+> db.Employees.find({_id:8}, {$set: {department: "Designing"}});
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "FieldPath field names may not start with '$'. Consider using $getField or $setField.",
+        "code" : 16410,
+        "codeName" : "Location16410"
+}
+> db.Employees.updateOne({_id:8}, {$set: {department: "Designing"}});
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.Employees.find();
+{ "_id" : 1, "name" : "Akhil", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 2, "name" : "John", "department" : "Developing", "salary" : 30000 }
+{ "_id" : 3, "name" : "Williams", "department" : "Testing", "salary" : 25000 }
+{ "_id" : 4, "name" : "Robert", "department" : "Testing", "salary" : 25000 }
+{ "_id" : 5, "name" : "Jenny", "department" : "Designing", "salary" : 22000 }
+{ "_id" : 6, "name" : "Stephen", "department" : "Production", "salary" : 25000 }
+{ "_id" : 7, "name" : "Krishna", "department" : "Production", "salary" : 25000 }
+{ "_id" : 8, "name" : "Hema", "department" : "Designing", "salary" : 25000 }
+> db.Employees.updateMany({salary:25000}, {$set: {salary: 27000}});
+{ "acknowledged" : true, "matchedCount" : 5, "modifiedCount" : 5 }
+> db.Employees.find();
+{ "_id" : 1, "name" : "Akhil", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 2, "name" : "John", "department" : "Developing", "salary" : 30000 }
+{ "_id" : 3, "name" : "Williams", "department" : "Testing", "salary" : 27000 }
+{ "_id" : 4, "name" : "Robert", "department" : "Testing", "salary" : 27000 }
+{ "_id" : 5, "name" : "Jenny", "department" : "Designing", "salary" : 22000 }
+{ "_id" : 6, "name" : "Stephen", "department" : "Production", "salary" : 27000 }
+{ "_id" : 7, "name" : "Krishna", "department" : "Production", "salary" : 27000 }
+{ "_id" : 8, "name" : "Hema", "department" : "Designing", "salary" : 27000 }
+> db.Employees.find().pretty;
+function() {
+    this._prettyShell = true;
+    return this;
+}
+> db.Employees.find().pretty();
+{
+        "_id" : 1,
+        "name" : "Akhil",
+        "department" : "Developing",
+        "salary" : 40000
+}
+{
+        "_id" : 2,
+        "name" : "John",
+        "department" : "Developing",
+        "salary" : 30000
+}
+{
+        "_id" : 3,
+        "name" : "Williams",
+        "department" : "Testing",
+        "salary" : 27000
+}
+{
+        "_id" : 4,
+        "name" : "Robert",
+        "department" : "Testing",
+        "salary" : 27000
+}
+{
+        "_id" : 5,
+        "name" : "Jenny",
+        "department" : "Designing",
+        "salary" : 22000
+}
+{
+        "_id" : 6,
+        "name" : "Stephen",
+        "department" : "Production",
+        "salary" : 27000
+}
+{
+        "_id" : 7,
+        "name" : "Krishna",
+        "department" : "Production",
+        "salary" : 27000
+}
+{
+        "_id" : 8,
+        "name" : "Hema",
+        "department" : "Designing",
+        "salary" : 27000
+}

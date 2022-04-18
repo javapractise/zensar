@@ -1,0 +1,95 @@
+1.  Employee records where salary of employee is greater than 57 k and less than 75 k?
+
+CREATE TABLE emp(
+ Name VARCHAR(20),
+ Id VARCHAR(20),
+ Address VARCHAR(20),
+ Desigination VARCHAR(20),
+ Salary VARCHAR(20)
+ );
+ 
+ INSERT INTO EMP VALUES("vinay","86732","HYD","Jr.software Engineer","64000");
+ INSERT INTO EMP VALUES("deepu","77234","HYD","Jr.software","32000");
+ INSERT INTO EMP VALUES("hanisha","44565","vij"," sr software","50000");
+ INSERT INTO EMP VALUES("tej","13434","pune","manger","60000");
+ INSERT INTO EMP VALUES("dharani","24387","hyd","Manager","545000");
+ INSERT INTO emp VALUES("hari","44757","US","IT","76000");
+ 
+	select * from emp WHERE Salary>"57000" AND Salary<"75000";
+
+2. What is query to find out fourth highest salary of employee?
+
+	select * FROM EMP ORDER BY  Salary DESC LIMIT 3,1;
+
+3.What is query to find out the Students whose names starts with S,K,U?
+
+CREATE TABLE emp(
+ Name VARCHAR(20),
+ Id VARCHAR(20),
+ Address VARCHAR(20),
+ Desigination VARCHAR(20),
+ Salary VARCHAR(20)
+ );
+ 
+ INSERT INTO EMP VALUES("kandru","86732","HYD","Jr.software Engineer","64000");
+ INSERT INTO EMP VALUES("deepu","77234","HYD","Jr.software","32000");
+ INSERT INTO EMP VALUES("hanisha","44565","vij"," sr software","50000");
+ INSERT INTO EMP VALUES("sai","13434","pune","manger","60000");
+ INSERT INTO EMP VALUES("dharani","24387","hyd","Manager","545000");
+ INSERT INTO emp VALUES("uday","44757","US","IT","76000");
+
+	select * FROM EMP WHERE Name LIKE 'S%' or 'K%' or 'U%';
+
+4.How to get information of students who is not assingned to any class.
+
+    select * from student where dept IS NULL;
+
+5. How to fetch  monthly Salary of Employee if annual salary is given?
+
+	select Salary ,(Salary/12) AS 'Montly Salary' from emp;
+
+6. How to get 3 Highest salaries records from Employee table?
+
+	select distinct TOP 3 Salary FROM EMP ORDER BY Salary DESC;
+
+7. How to fetch 3rd highest salary using Rank Function?
+
+select * from (SELECT DENSE_RANK() OVER (ORDER BY SAL desc) my_rank,empId,sal,name FROM EMPLOYEE)
+where my_rank<=3;
+
+8.What is SQL Query to find maximum salary of each department?
+
+select MAX(SALARY) from emp;
+
+9.Display the name of employees who have joined in 2016 and salary is greater than 10000?
+
+CREATE TABLE emp(
+ Name VARCHAR(20),
+ Id VARCHAR(20),
+ Address VARCHAR(20),
+ Desigination VARCHAR(20),
+ Salary VARCHAR(20)
+ );
+ 
+ INSERT INTO EMP VALUES("vinay","86732","HYD","Jr.software Engineer","64000");
+ INSERT INTO EMP VALUES("deepu","77234","HYD","Jr.software","32000");
+ INSERT INTO EMP VALUES("hanisha","44565","vij"," sr software","50000");
+ INSERT INTO EMP VALUES("tej","13434","pune","manger","60000");
+ INSERT INTO EMP VALUES("dharani","24387","hyd","Manager","545000");
+ INSERT INTO emp VALUES("hari","44757","US","IT","76000");
+
+ALTER TABLE EMP ADD DOJ DATE;
+
+UPDATE EMP SET DOJ='12-06-2016' WHERE NAME="vinay";
+update emp set DOJ='12-08-2011' where NAME="tej";
+
+select Name,Salary from emp where YEAR(DOJ)='2016' AND Salary=64000;
+
+10.How to Find the Joining date of Employee in YYYY-DAY-Date format.
+
+  select *  TO-CHAR(hiredate,'yyyy-mon-dd') "hiredate" from Student ;
+
+11.Write an SQL query to fetch duplicate records from EmployeeDetails.
+
+select Name,Id,Address,Desigination,Salary,COUNT(*) 
+FROM EMP GROUP BY Name,Id,Address,Desigination,Salary HAVING COUNT(*)>1;

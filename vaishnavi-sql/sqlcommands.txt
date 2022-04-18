@@ -1,0 +1,9 @@
+
+create database employee //first of all creating database with name 
+
+use employee       //use that database
+
+create table Employee (ID INT,Name varchar(20), ADDRESS  CHAR (25))  //create table with name attributes
+INSERT INTO employee (ID,Name,ADDRESS) VALUES (1, 'vaishnavi',  'Ahmedabad')	//insert table values in that
+
+SELECT * FROM employee              //display the whole table

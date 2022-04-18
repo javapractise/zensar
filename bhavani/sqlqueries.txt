@@ -1,0 +1,14 @@
+CREATE TABLE EMPLOYEE (
+  empId INT ,
+  name varchar,
+  dept varchar 
+);
+
+-- insert
+INSERT INTO EMPLOYEE VALUES (0001, 'Clark', 'Sales');
+INSERT INTO EMPLOYEE VALUES (0002, 'Dave', 'Accounting');
+INSERT INTO EMPLOYEE VALUES (0003, 'Ava', 'Sales');
+
+update employee set name="abc" where empid=0001;
+delete from employee where empid=0001;
+drop table employee;

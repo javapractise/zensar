@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+TEST - 1
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+>>>>>>> 8e4b598d925003d58b9281520c97a2152fb4fe1d
 1) Creating Table
 ------------------------
 create table Employee (ID int NOT NULL, Name varchar(40) NOT NULL, Location varchar(40) NOT NULL, Age int, PRIMARY KEY(ID));
@@ -30,4 +36,44 @@ DROP COLUMN Email;
 
 7) Deleting Table
 -----------------------
+<<<<<<< HEAD
 DROP TABLE Employee;
+=======
+DROP TABLE Employee;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST - 2
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+1) Employee records where salary of employee is greater than 57 k and less than 75 k? 
+A) SELECT * FROM Employee WHERE Salary > 57000 AND Salary < 75000;
+
+2) What is query to find out fourth highest salary of employee?
+A) Select Salary from Employee order by Salary DESC limit 3,1;
+
+3) What is query to find out the Students whose names starts with S,K,U?
+A) SELECT * FROM Students WHERE Name LIKE 'S%' OR Name LIKE 'K%'OR Name LIKE 'U%';
+
+4) How to get information of students who is not assingned to any class?
+A) SELECT * FROM Students WHERE Assigned = "FALSE";
+
+5) How to fetch  monthly Salary of Employee if annual salary is given?
+A) SELECT Name,Salary/12 AS "Monthly Salary" FROM Employee;
+
+6) How to get 3 Highest salaries records from Employee table?
+A) SELECT * FROM Employee ORDER BY Salary DESC LIMIT 3;
+
+7) How to fetch 3rd highest salary using Rank Function?
+A) SELECT * FROM (SELECT name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS rank FROM employees) AS employee WHERE rank = 3;
+
+8) What is SQL Query to find maximum salary of each department?
+A) SELECT department, MAX(salary) FROM employees GROUP BY department;
+
+9) Display the name of employees who have joined in 2016 and salary is greater than 10000?
+A) SELECT * FROM employees WHERE EXTRACT(YEAR FROM hired_date)=2016 AND salary>10000;
+
+10) How to Find the Joining date of Employee in YYYY-DAY-Date format.
+A) SELECT name, TO_CHAR(hired_date, 'YYYY-DAY-DD') "DATES" FROM Employees;
+
+11) Write an SQL query to fetch duplicate records from EmployeeDetails?
+A) SELECT name,  hired_date, salary, COUNT(*) FROM employees GROUP BY name, hired_date, salary HAVING COUNT(*) > 1;
+>>>>>>> 8e4b598d925003d58b9281520c97a2152fb4fe1d

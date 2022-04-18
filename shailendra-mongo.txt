@@ -1,22 +1,49 @@
-
-use shailendra;
-db.shailendra.insertOne({name:"shailendra",location:"pune"})
-
-db.shailendra.find();
-db.shailendra.insertMany([
-  { name: 'Clark', location: 'pune' },
-  { name: 'Dave', location: 'indore' },
-   { name: 'Raju', location: 'Chennai' },
-  { name: 'Jya', location: 'hyd' },
-  {name: 'raja',location:'indore'}
-]);
-db.shailendra.updateOne(   
-  {name:"Dave" },
-  { $set: { name: "Dev" } }
-);
-db.shailendra.deleteOne({location:"hyd"})
-db.shailendra.deleteMany({location:"indore"})
-db.shailendra.updateMany(   
-  {location:"indore" },
-  { $set: { location: "pune" } }
-);
+MongoDB Enterprise > show dbs
+admin     0.000GB
+config    0.000GB
+employee  0.000GB
+local     0.000GB
+student   0.000GB
+MongoDB Enterprise > use shailendra
+switched to db shailendra
+MongoDB Enterprise > db.shailendra.insertOne({name:"shailendra",location:"pune"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("625d5f4c94c0212e9c08c4b6")
+}
+MongoDB Enterprise > db.shailendra.insertMany([
+...   { name: 'Clark', location: 'pune' },
+...   { name: 'Dave', location: 'indore' },
+...    { name: 'Raju', location: 'Chennai' },
+...   { name: 'Jya', location: 'hyd' },
+...   {name: 'raja',location:'indore'}
+...
+... ]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("625d5f6294c0212e9c08c4b7"),
+                ObjectId("625d5f6294c0212e9c08c4b8"),
+                ObjectId("625d5f6294c0212e9c08c4b9"),
+                ObjectId("625d5f6294c0212e9c08c4ba"),
+                ObjectId("625d5f6294c0212e9c08c4bb")
+        ]
+}
+MongoDB Enterprise > db.shailendra.updateOne(
+...   {name:"Dave" },
+...   { $set: { name: "Dev" } }
+... );
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+MongoDB Enterprise > db.shailendra.deleteOne({location:"hyd"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+MongoDB Enterprise > db.shailendra.find();
+{ "_id" : ObjectId("625d5f4c94c0212e9c08c4b6"), "name" : "shailendra", "location" : "pune" }
+{ "_id" : ObjectId("625d5f6294c0212e9c08c4b7"), "name" : "Clark", "location" : "pune" }
+{ "_id" : ObjectId("625d5f6294c0212e9c08c4b8"), "name" : "Dev", "location" : "indore" }
+{ "_id" : ObjectId("625d5f6294c0212e9c08c4b9"), "name" : "Raju", "location" : "Chennai" }
+{ "_id" : ObjectId("625d5f6294c0212e9c08c4bb"), "name" : "raja", "location" : "indore" }
+MongoDB Enterprise > db.shailendra.updateMany(
+...   {location:"indore" },
+...   { $set: { location: "pune" } }
+... );
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }

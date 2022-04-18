@@ -1,4 +1,3 @@
- show dbs
 admin     0.000GB
 config    0.000GB
 employee  0.000GB
@@ -9,33 +8,33 @@ employee
 > db.employee.InsertOne({})
 uncaught exception: TypeError: db.employee.InsertOne is not a function :
 @(shell):1:1
-> db.employee.InsertOne({name:"jitendra", dept:"development", location:"mumbai", salary:"40000"})
+> db.employee.InsertOne({name:"vivek", dept:"development", location:"mumbai", salary:"40000"})
 uncaught exception: TypeError: db.employee.InsertOne is not a function :
 @(shell):1:1
-> db.employee.InsertOne({name:"jitendra", dept:"development", location:"mumbai", salary:"40000"})
+> db.employee.InsertOne({name:"vivek", dept:"development", location:"mumbai", salary:"40000"})
 uncaught exception: TypeError: db.employee.InsertOne is not a function :
 @(shell):1:1
-> db.employee.insertone({name:"jitendra", dept:"dev", location:"mumbai",salary:"40000"}
+> db.employee.insertone({name:"vivek", dept:"dev", location:"mumbai",salary:"40000"}
 ... )
 uncaught exception: TypeError: db.employee.insertone is not a function :
 @(shell):1:1
-> db.employee.insertOne({name:"jitendra", dept:"dev", location:"mumbai",salary:"40000"})
-{ db.employee.insertMany([{name:"abhi" dept: "dev", location:"pune", salary:"50000"),(name:"anand", dept:"dev", location:"
+> db.employee.insertOne({name:"vivek", dept:"dev", location:"mumbai",salary:"40000"})
+{ db.employee.insertMany([{name:"rishi" dept: "dev", location:"pune", salary:"50000"),(name:"anand", dept:"dev", location:"
 uncaught exception: SyntaxError: missing } after property list :ne", salary:"50000"),(name:"anand", dept:"dev", location:"
 @(shell):1:37.insertMany([{name:"abhi" dept: "dev", location:"pune", salary:"50000"),(name:"anand", dept:"dev", location:"
-> db.employee.insertOne({name:"jitendra", dept: "development", location: "Mumbai"})
-{ db.employee.insertMany([{name:"abhi" dept: "dev", location:"pune", salary:"50000"),(name:"anand", dept:"dev", location:
+> db.employee.insertOne({name:"vivek", dept: "development", location: "Mumbai"})
+{ db.employee.insertMany([{name:"rishi" dept: "dev", location:"pune", salary:"50000"),(name:"anand", dept:"dev", location:
         "acknowledged" : true,
         "insertedId" : ObjectId("625d45abdc7b55b9d1fc07b4")
 }
-> db.employee.insertOne({name:"jitendra", dept: "dev", location: "Mumbai", salary:"50000"})
+> db.employee.insertOne({name:"vivek", dept: "dev", location: "Mumbai", salary:"50000"})
 {
         "acknowledged" : true,
         "insertedId" : ObjectId("625d4633dc7b55b9d1fc07b5")
 }
 > show collections;
 employee
-> db.employee.insertMany([{name:"abhi", dept:"dev", location:"pune", salary:"40000"},{name:"anand", dept:"dev", location:"db.employee.insertMany([{name:"abhi", dept:"dev", location:"pune", salary:"40000"},{name:"anand", dept:"dev", location:"db.employee.insertMany([{name:"abhi", dept:"dev", location:"pune", salary:"40000"},{name:"anand", dept:"dev", location:"db.employee.insertMany([{name:"abhi", dept:"dev", location:"pune", salary:"40000"},{name:"anand", dept:"dev", location:"db.employee.insertMany([{name:"abhi", dept:"dev", location:"pune", salary:"40000"},{name:"anand", dept:"dev", location:"db.employee.insertMany([{name:"abhi", dept:"dev", location:"pune", salary:"40000"},{name:"anand", dept:"dev", location:"db.employee.insertMany([{name:"abhi", dept:"dev", location:"pune", salary:"40000"},{name:"anand", dept:"dev", location:"db.employee.insertMany([{name:"abhi", dept:"dev", location:"pune", salary:"40000"},{name:"anand", dept:"dev", location:"hyd", salary:"30000"}])
+> db.employee.insertMany([{name:"rishi", dept:"dev", location:"pune", salary:"40000"},{name:"anand", dept:"dev", location:"db.employee.insertMany([{name:"abhi", dept:"dev", location:"pune", salary:"40000"},{name:"anand", dept:"dev", location:"db.employee.insertMany([{name:"abhi", dept:"dev", location:"pune", salary:"40000"},{name:"anand", dept:"dev", location:"db.employee.insertMany([{name:"abhi", dept:"dev", location:"pune", salary:"40000"},{name:"anand", dept:"dev", location:"db.employee.insertMany([{name:"abhi", dept:"dev", location:"pune", salary:"40000"},{name:"anand", dept:"dev", location:"db.employee.insertMany([{name:"abhi", dept:"dev", location:"pune", salary:"40000"},{name:"anand", dept:"dev", location:"db.employee.insertMany([{name:"abhi", dept:"dev", location:"pune", salary:"40000"},{name:"anand", dept:"dev", location:"db.employee.insertMany([{name:"abhi", dept:"dev", location:"pune", salary:"40000"},{name:"anand", dept:"dev", location:"hyd", salary:"30000"}])
 {
         "acknowledged" : true,
         "insertedIds" : [
@@ -63,27 +62,27 @@ employee
 { "_id" : ObjectId("625d3cbc48d16bc4801c0ff5") }
 {
         "_id" : ObjectId("625d449cdc7b55b9d1fc07b3"),
-        "name" : "jitendra",
+        "name" : "vivek",
         "dept" : "dev",
         "location" : "mumbai",
         "salary" : "40000"
 }
 {
         "_id" : ObjectId("625d45abdc7b55b9d1fc07b4"),
-        "name" : "jitendra",
+        "name" : "vivek",
         "dept" : "development",
         "location" : "Mumbai"
 }
 {
         "_id" : ObjectId("625d4633dc7b55b9d1fc07b5"),
-        "name" : "jitendra",
+        "name" : "vivek",
         "dept" : "dev",
         "location" : "Mumbai",
         "salary" : "50000"
 }
 {
         "_id" : ObjectId("625d470adc7b55b9d1fc07b7"),
-        "name" : "anuj",
+        "name" : "rawat",
         "dept" : "dev",
         "location" : "hyd",
         "salary" : "30000"

@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "empId": 1,
+    "name": "abdulla",
+    "department": "java developer",
+    "salary": 50000
+  }
+},
+{
+  "_id": {
+    "empId": 2,
+    "name": "sagar",
+    "department": "full satack developer",
+    "salary": 40000
+  }
+},
+{
+  "_id": {
+    "empId": 3,
+    "name": "bhargav",
+    "department": "sql developer",
+    "salary": 35000
+  }
+},
+{
+  "_id": {
+    "empId": 4,
+    "name": "mahebub",
+    "department": "java full stack developer",
+    "salary": 30000
+  }
+}]

@@ -33,8 +33,26 @@ db.employee.updateMany({name : "rushi"}, {$set: {name : "rohitkrishna"}})
         "address" : "gachibowli",
         "mobile" : "988559"
 }
+db.employee.find().pretty
+function() {
+    this._prettyShell = true;
+    return this;
 
  db.employee.find({$or: [{address : "vijayawada"}, {address: "chennai"}]})
 { "_id" : ObjectId("625d3f07a7d17de4658717b1"), "name" : "rohitkrishna", "id" : "1002", "dept" : "civil", "address" : "vijayawada", "mobile" : "988556" }
+
+> db.employee.find()
+{ "_id" : ObjectId("625d3f07a7d17de4658717b1"), "name" : "rohitkrishna", "id" : "1002", "dept" : "civil", "address" : "vijayawada", "mobile" : "988556" }
+{ "_id" : ObjectId("625d3f39a7d17de4658717b2"), "name" : "kamal", "id" : "1003", "dept" : "developer", "address" : "gachibowli", "mobile" : "988559" }
+{ "_id" : ObjectId("625d4394a7d17de4658717b3"), "name" : "rahul", "id" : "1004", "dept" : "civil", "address" : "vijayawada", "mobile" : "988556" }
+{ "_id" : ObjectId("625d43a7a7d17de4658717b4"), "name" : "ravi", "id" : "1005", "dept" : "civil", "address" : "vijayawada", "mobile" : "9885545" }
+
+ db.employee.deleteOne({"name":"rahul"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+
+ db.employee.find()
+{ "_id" : ObjectId("625d3f07a7d17de4658717b1"), "name" : "rohitkrishna", "id" : "1002", "dept" : "civil", "address" : "vijayawada", "mobile" : "988556" }
+{ "_id" : ObjectId("625d3f39a7d17de4658717b2"), "name" : "kamal", "id" : "1003", "dept" : "developer", "address" : "gachibowli", "mobile" : "988559" }
+{ "_id" : ObjectId("625d43a7a7d17de4658717b4"), "name" : "ravi", "id" : "1005", "dept" : "civil", "address" : "vijayawada", "mobile" : "9885545" }
 
 

@@ -1,0 +1,58 @@
+used to change data base:
+use mydb2022
+
+to create a new collection we use the query
+db.createcollection("employee")
+
+to insert a single data into we use
+db.employee.insertOne({"name":"rohit","id":"1001","dept":"software","address":"hyd","mobile":"988555"})
+
+to insert many data at a time we use following
+db.employee.insertMany([{"name":"pavan","id":"1002","det":"civil","address":"vijayawada","mobile":"988556"},{"name":"kamal","id":"1003","det":"developer","address":"gachibowli","mobile":"988589"}])
+
+db.employee.updateMany({name : "rushi"}, {$set: {name : "rohitkrishna"}})
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+
+ db.employee.deleteMany({location:"vijayawada"})
+{ "acknowledged" : true, "deletedCount" : 0 }
+
+> db.employee.find().pretty()
+{
+        "_id" : ObjectId("625d3f07a7d17de4658717b1"),
+        "name" : "rohitkrishna",
+        "id" : "1002",
+        "dept" : "civil",
+        "address" : "vijayawada",
+        "mobile" : "988556"
+}
+{
+        "_id" : ObjectId("625d3f39a7d17de4658717b2"),
+        "name" : "kamal",
+        "id" : "1003",
+        "dept" : "developer",
+        "address" : "gachibowli",
+        "mobile" : "988559"
+}
+db.employee.find().pretty
+function() {
+    this._prettyShell = true;
+    return this;
+
+ db.employee.find({$or: [{address : "vijayawada"}, {address: "chennai"}]})
+{ "_id" : ObjectId("625d3f07a7d17de4658717b1"), "name" : "rohitkrishna", "id" : "1002", "dept" : "civil", "address" : "vijayawada", "mobile" : "988556" }
+
+> db.employee.find()
+{ "_id" : ObjectId("625d3f07a7d17de4658717b1"), "name" : "rohitkrishna", "id" : "1002", "dept" : "civil", "address" : "vijayawada", "mobile" : "988556" }
+{ "_id" : ObjectId("625d3f39a7d17de4658717b2"), "name" : "kamal", "id" : "1003", "dept" : "developer", "address" : "gachibowli", "mobile" : "988559" }
+{ "_id" : ObjectId("625d4394a7d17de4658717b3"), "name" : "rahul", "id" : "1004", "dept" : "civil", "address" : "vijayawada", "mobile" : "988556" }
+{ "_id" : ObjectId("625d43a7a7d17de4658717b4"), "name" : "ravi", "id" : "1005", "dept" : "civil", "address" : "vijayawada", "mobile" : "9885545" }
+
+ db.employee.deleteOne({"name":"rahul"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+
+ db.employee.find()
+{ "_id" : ObjectId("625d3f07a7d17de4658717b1"), "name" : "rohitkrishna", "id" : "1002", "dept" : "civil", "address" : "vijayawada", "mobile" : "988556" }
+{ "_id" : ObjectId("625d3f39a7d17de4658717b2"), "name" : "kamal", "id" : "1003", "dept" : "developer", "address" : "gachibowli", "mobile" : "988559" }
+{ "_id" : ObjectId("625d43a7a7d17de4658717b4"), "name" : "ravi", "id" : "1005", "dept" : "civil", "address" : "vijayawada", "mobile" : "9885545" }
+
+

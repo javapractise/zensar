@@ -1,0 +1,165 @@
+package javapractice;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class array {
+
+	public static void main(String[] args) {
+		Scanner a=new Scanner(System.in);
+		int i=0;
+		int[] arr=new int[5];
+		for(i=0;i<arr.length;i++)
+		{
+			arr[i]=a.nextInt();
+		}
+		Arrays.sort(arr);
+		for(i=0;i<arr.length;i++)
+		{
+			System.out.println(arr[i]);
+		}
+		System.out.println(arr[4]);
+	}
+
+}
+-------------------------------------------------------------------------
+--------------------------------------------------------------------------
+package javapractice;
+
+import java.util.Scanner;
+
+public class swaping {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int a,b,c;
+		a=sc.nextInt();
+		b=sc.nextInt();
+		c=a;
+		a=b;
+		b=c;
+		System.out.println("a="+a);
+		System.out.println("b="+b);
+		
+
+	}
+
+}
+--------------------------------------------------------------------
+------------------------------------------------------------------
+package javapractice;
+
+import java.util.Scanner;
+
+public class palindrome {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+		int sum=0;
+		int rem=0;
+		while(a!=0)
+		{
+			rem=a%10;
+		    sum=(sum*10)+rem;
+			a=a/10;
+		}
+		System.out.println(sum);
+
+	}
+
+}
+--------------------------------------------------------
+--------------------------------------------------------
+package javapractice;
+
+import java.util.Scanner;
+
+public class prime {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int count=0;
+		for(int i=1;i<n;i++)
+		{
+			if(n%i==0)
+			{
+				count++;
+			}
+		}
+		if(count==1)
+		{
+			System.out.print("prime");
+		}
+		else
+		{
+			System.out.print("not prime");
+		}
+			
+
+	}
+
+}
+----------------------------------------------------------------------
+-----------------------------------------------------------------------
+package javapractice;
+
+public class arraycompare {
+
+	public static void main(String[] args) {
+		int[] arr= {'2','4','4',6};
+		int[] arr1= {'2','4','4',6};
+		System.out.println(arr==arr1);
+
+	}
+
+}
+-----------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+package javapractice;
+
+import java.util.Scanner;
+
+public class stringreverse {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str=sc.next();
+		for(int i=str.length()-1;i>=0;i--)
+		{
+			System.out.print(str.charAt(i));
+		}
+
+	}
+
+}
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+package javapractice;
+
+import java.util.Scanner;
+
+public class arrayduplicates {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int[] arr=new int[5];
+		for(int i=0;i<arr.length;i++)
+		{
+			arr[i]=sc.nextInt();
+		}
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=i+1;j<arr.length;j++)
+			{
+				if(arr[j]==arr[i])
+				{
+					System.out.println(j);
+				}
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+class Large{
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the length:");
+		int length = sc.nextInt();
+		int[] arr = new int[length];
+		int large = 0;
+		System.out.println("Enter the Numbers:");
+		for(int i=0 ; i<length;i++)
+		{
+			arr[i] = sc.nextInt();
+		}
+		
+		for(int i=0 ; i<length ; i++)
+		{
+			if(arr[i]>large)
+			{large = arr[i];}
+		}
+		System.out.println("Largest Number from given numbers is "+large);	
+	}
+}

@@ -1,0 +1,200 @@
+                                                                         OUTPUT:
+REVERSE STRING PROGRAM:                                                       
+
+package javapractice;                                                             original string :
+                                                                                  abc
+                                                                                  reversed string :cba
+public class Reverse {
+
+	public static void main(String[] args) {                     
+		String str= "abc" , nstr="" ;
+		char ch;
+		System.out.println("original string :");
+		System.out.println("abc");
+		for(int i=0 ;i<str.length(); i++)
+		{
+			ch = str.charAt(i);
+			nstr= ch+nstr ;
+		}
+		System.out.println("reversed string :" +nstr);
+	}
+
+}
+
+
+PALINDROME PROGRAM:                                                               OUTPUT:
+package javapractice;                                                       madam is a palindrome string    
+
+public class Palindrome {
+
+	public static void main(String[] args) {
+		String str = "madam" , revstr = "";
+		int strLength = str.length();
+		for (int i=(strLength-1);i>=0 ;--i)
+		{
+			revstr = revstr  + str.charAt(i);
+		}
+		if(str.toLowerCase().equals(revstr.toLowerCase())) {
+			System.out.println(str + " is a palindrome string");
+		}
+		else {
+			System.out.println(str + "is not a palindrome string");
+		}
+	}
+
+}
+
+
+
+PRIME OR NOT :                                                                                           OUTPUT:
+package javapractice;                                                                    enter a number
+                                                                                                15
+import java.util.Scanner;                                                                not a prime number 
+
+public class Primenumber {
+
+	public static void main(String[] args) {
+	Scanner sc =new Scanner(System.in);
+    System.out.println("enter the number");
+  int n= sc.nextInt();	
+   int count =1;
+   for ( int i=1; i<=n/2; i++)
+   {
+	   if(n%i==0)
+		   count++;
+   }
+	if(count==2)
+		System.out.println("prime number");
+	else 
+		System.out.println("not a prime number");
+	}
+	
+}
+
+
+
+
+SWAPPING :                                                                                     OUTPUT:
+package javapractice;                                                                             enter the values
+                                                                                                   2
+                                                                                                   5
+                                                                                                   a=5                                                                                                    b=2
+import java.util.Scanner;                                                                          b=2
+
+public class Swapping {
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println(" enter the values");
+		int a, b, c;
+		a=sc.nextInt();
+		b=sc.nextInt();
+		c=a; 
+		a=b;
+		b=c;
+		System.out.println("a="+a);
+		System.out.println("b="+b);
+	}
+
+}
+
+BIGGEST VALUE:
+package javapractice;
+
+import java.util.Scanner;
+
+public class biggestvalue {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter the size of an array");
+		int n= sc.nextInt();
+		int a[]=new int[n];
+		System.out.println("enter the elements" +n);
+		for(int i=0; i<a.length;i++)
+		{
+			a[i] = sc.nextInt();
+		}
+         int big =a[0];
+         for(int i=1;i<a.length;i++)
+         {
+        	 if(a[i]>big)
+        		 big=a[i];
+         }
+         System.out.println("biggest value is" +big);
+         }
+
+}
+
+
+COPYING ARRAY ELEMENTS:
+package javapractice;
+
+public class Copyarray {
+
+	public static void main(String[] args) {
+		int a[]= new int[] {1,2,3,4,5};
+		int b[]= new int[a.length];
+		for(int i=0;i<a.length;i++)
+		{
+			b[i]=a[i];
+		}
+		System.out.println("elements of original array");
+		for(int i=0;i<a.length;i++)
+		{
+			System.out.println(a[i]+ "");
+		}
+	}
+
+}
+
+DUPLICATE ARRAY ELEMENTS:                                                            OUTPUT:
+package javapractice;                                                                   duplicate elements are 
+                                                                                        3,5
+public class DuplicateArray {
+
+	public static void main(String[] args) {
+		int a[]= new int[] {3,2,3,5,5};
+		System.out.println(" duplicate elements in an array");
+		
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=i+1;j<a.length;j++)
+			{
+				if(a[i]==a[j])
+					System.out.println(a[j]);
+			}
+		}
+		
+		
+		
+		
+	}
+
+}
+
+
+SORTING ARRAY:
+package javapractice;                                                             
+
+public class Sorting {
+
+	public static void main(String[] args) {
+		int [] a=new int [] {5,2,8,7,1};
+		int temp=0;
+		System.out.println("Elements of original array:");
+		for(int i=0;i<a.length;i++) {
+			System.out.println(a[i]+ "");
+		}
+		for (int i=0;i<a.length;i++)
+		{
+			for(int j=i+1;j<a.length;j++)
+			{
+				if(a[i]<a[j])
+					temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+	}
+}

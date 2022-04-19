@@ -1,0 +1,25 @@
+package practice;
+
+public class classloader {
+	private static final Class Class = null;
+
+	public static void main(System args[]) {
+		Class c=classloader.Class;
+		System.out.println(c.getClassLoader());
+		
+
+	}
+
+}
+----------------------------------------------------------------
+----------------------------------------------------------------
+package practice;
+
+public class demo {
+
+	public static void main(String[] args) {
+		System.out.println("hello world");
+
+	}
+
+}

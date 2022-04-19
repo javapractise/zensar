@@ -1,0 +1,152 @@
+db.emp.insertMany([{Id:"1",Name:"Anusha",Dept:"hr",Salary:"30000",Location:"Nrpt"},{Id:"2",Name:"Akhila",Dept:"dev",Salary:"40000",Location:"Sdpt"},{Id:"3",Name:"Archana",Dept:"hr",Salary:"60000",Location:"Nrpt"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("625e2fcbe5d22cd230247fbe"),
+                ObjectId("625e2fcbe5d22cd230247fbf"),
+                ObjectId("625e2fcbe5d22cd230247fc0")
+        ]
+}
+> db.emp.insertMany([{Id:"4",Name:"Akshay",Dept:"dev",Salary:"30000",Location:"Nrpt"},{Id:"3",Name:"Rishitha",Dept:"Hr",Salary:"50000",Location:"Hyd"},{Id:"6",Name:"James",Dept:"hr",Salary:"60000",Location:"Nrpt"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("625e3051e5d22cd230247fc1"),
+                ObjectId("625e3051e5d22cd230247fc2"),
+                ObjectId("625e3051e5d22cd230247fc3")
+        ]
+}
+> db.emp.find().pretty()
+{
+        "_id" : ObjectId("625e2fcbe5d22cd230247fbe"),
+        "Id" : "1",
+        "Name" : "Anusha",
+        "Dept" : "hr",
+        "Salary" : "30000",
+        "Location" : "Nrpt"
+}
+{
+        "_id" : ObjectId("625e2fcbe5d22cd230247fbf"),
+        "Id" : "2",
+        "Name" : "Akhila",
+        "Dept" : "dev",
+        "Salary" : "40000",
+        "Location" : "Sdpt"
+}
+{
+        "_id" : ObjectId("625e2fcbe5d22cd230247fc0"),
+        "Id" : "3",
+        "Name" : "Archana",
+        "Dept" : "hr",
+        "Salary" : "60000",
+        "Location" : "Nrpt"
+}
+{
+        "_id" : ObjectId("625e3051e5d22cd230247fc1"),
+        "Id" : "4",
+        "Name" : "Akshay",
+        "Dept" : "dev",
+        "Salary" : "30000",
+        "Location" : "Nrpt"
+}
+{
+        "_id" : ObjectId("625e3051e5d22cd230247fc2"),
+        "Id" : "3",
+        "Name" : "Rishitha",
+        "Dept" : "Hr",
+        "Salary" : "50000",
+        "Location" : "Hyd"
+}
+{
+        "_id" : ObjectId("625e3051e5d22cd230247fc3"),
+        "Id" : "6",
+        "Name" : "James",
+        "Dept" : "hr",
+        "Salary" : "60000",
+        "Location" : "Nrpt"
+}
+> db.emp.updateMany({Name:"Rishitha"},{$set:{Id:"5"}})
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.emp.find().pretty()
+{
+        "_id" : ObjectId("625e2fcbe5d22cd230247fbe"),
+        "Id" : "1",
+        "Name" : "Anusha",
+        "Dept" : "hr",
+        "Salary" : "30000",
+        "Location" : "Nrpt"
+}
+{
+        "_id" : ObjectId("625e2fcbe5d22cd230247fbf"),
+        "Id" : "2",
+        "Name" : "Akhila",
+        "Dept" : "dev",
+        "Salary" : "40000",
+        "Location" : "Sdpt"
+}
+{
+        "_id" : ObjectId("625e2fcbe5d22cd230247fc0"),
+        "Id" : "3",
+        "Name" : "Archana",
+        "Dept" : "hr",
+        "Salary" : "60000",
+        "Location" : "Nrpt"
+}
+{
+        "_id" : ObjectId("625e3051e5d22cd230247fc1"),
+        "Id" : "4",
+        "Name" : "Akshay",
+        "Dept" : "dev",
+        "Salary" : "30000",
+        "Location" : "Nrpt"
+}
+{
+        "_id" : ObjectId("625e3051e5d22cd230247fc2"),
+        "Id" : "5",
+        "Name" : "Rishitha",
+        "Dept" : "Hr",
+        "Salary" : "50000",
+        "Location" : "Hyd"
+}
+{
+        "_id" : ObjectId("625e3051e5d22cd230247fc3"),
+        "Id" : "6",
+        "Name" : "James",
+        "Dept" : "hr",
+        "Salary" : "60000",
+        "Location" : "Nrpt"
+}
+> db.emp.aggregate({$group:{_id:{Location:"$Location"}}})
+{ "_id" : { "Location" : "Sdpt" } }
+{ "_id" : { "Location" : "Hyd" } }
+{ "_id" : { "Location" : "Nrpt" } }
+
+
+
+ db.emp.aggregate({$sort:{Name:1}})
+{ "_id" : ObjectId("625e2fcbe5d22cd230247fbf"), "Id" : "2", "Name" : "Akhila", "Dept" : "dev", "Salary" : "40000", "Location" : "Sdpt" }
+{ "_id" : ObjectId("625e3051e5d22cd230247fc1"), "Id" : "4", "Name" : "Akshay", "Dept" : "dev", "Salary" : "30000", "Location" : "Nrpt" }
+{ "_id" : ObjectId("625e2fcbe5d22cd230247fbe"), "Id" : "1", "Name" : "Anusha", "Dept" : "hr", "Salary" : "30000", "Location" : "Nrpt" }
+{ "_id" : ObjectId("625e2fcbe5d22cd230247fc0"), "Id" : "3", "Name" : "Archana", "Dept" : "hr", "Salary" : "60000", "Location" : "Nrpt" }
+{ "_id" : ObjectId("625e3051e5d22cd230247fc3"), "Id" : "6", "Name" : "James", "Dept" : "hr", "Salary" : "60000", "Location" : "Nrpt" }
+{ "_id" : ObjectId("625e3051e5d22cd230247fc2"), "Id" : "5", "Name" : "Rishitha", "Dept" : "Hr", "Salary" : "50000", "Location" : "Hyd" }
+> db.emp.aggregate({$match:{Location:"Sdpt"}})
+{ "_id" : ObjectId("625e2fcbe5d22cd230247fbf"), "Id" : "2", "Name" : "Akhila", "Dept" : "dev", "Salary" : "40000", "Location" : "Sdpt" }
+> db.emp.aggregate({$group:{_id:"$Name",emp:{$sum:1}}})
+{ "_id" : "Anusha", "emp" : 1 }
+{ "_id" : "Rishitha", "emp" : 1 }
+{ "_id" : "Akhila", "emp" : 1 }
+{ "_id" : "Archana", "emp" : 1 }
+{ "_id" : "James", "emp" : 1 }
+{ "_id" : "Akshay", "emp" : 1 }
+> db.emp.aggregate({$group:{_id:"$Salary",emp:{$sum:1}}})
+{ "_id" : "50000", "emp" : 1 }
+{ "_id" : "40000", "emp" : 1 }
+{ "_id" : "60000", "emp" : 2 }
+{ "_id" : "30000", "emp" : 2 }
+> db.emp.aggregate([{$match:{Location:"Sdpt"}},{$group:{_id:"$Salary",emp:{$sum:1}}},{$sort:{Name:1}}])
+{ "_id" : "40000", "emp" : 1 }
+> db.emp.aggregate([{$match:{Location:"Nrpt"}},{$group:{_id:"$Salary",emp:{$sum:1}}},{$sort:{Name:1}}])
+{ "_id" : "60000", "emp" : 2 }
+{ "_id" : "30000", "emp" : 2 }
+>

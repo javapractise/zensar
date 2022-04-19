@@ -1,0 +1,21 @@
+1. Hello World program
+
+class A {
+public static void main(String args[]){
+System.out.println("Hello World");
+}
+}
+
+----------------------------------------------------
+2. classloader program
+
+public class World
+{
+public static void main(String[] args)
+{
+    Class B = World.class;
+    System.out.println(World.class);
+
+    System.out.println(String.class.getClassLoader());
+}
+}

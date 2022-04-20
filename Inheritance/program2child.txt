@@ -1,0 +1,13 @@
+package Inheritance;
+
+public class Inheritance2 extends Inheritance1{
+ void child() {
+	 System.out.println("This is child class");
+ }
+public static void main(String[] args) {
+	Inheritance2 b = new Inheritance2();
+	b.child();
+	a.parent();......Error
+b.parent();.......Error
+}
+}

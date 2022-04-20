@@ -1,0 +1,54 @@
+package Inheritance;
+
+public class Member {
+String name;
+int age;
+int phn;
+int salary;
+String address;
+void printsalary() {
+	System.out.println("print salaries of the members");
+}
+public static void main(String[] args) {
+	Member m = new Member();
+	m.printsalary();
+}
+}
+
+EMPLOYEE
+package Inheritance;
+
+public class Employee extends Member {
+	String specialisation;
+    String dept;
+	public static void main(String[] args) {
+		Employee e = new Employee();
+		e.name="Aswini";
+		e.age=22;
+		e.phn=989898087 ;
+		e.salary=35000;
+		e.address = "Hyderabad";
+		System.out.println(e.name +"  " + e.phn +"  " + e.age +"   " + e.salary +"  "+ e.address);
+
+	}
+
+}
+
+MANAGER
+package Inheritance;
+
+public class Manager extends Member {
+  String specialisation;
+  String dept;
+	public static void main(String[] args) {
+		Manager m = new Manager();
+		m.name="harsha";
+		m.age=25;
+		m.phn=877697898 ;
+		m.salary=25000;
+		m.address =" Bangalore";
+		System.out.println(m.name +"  " + m.phn +"  " + m.age +"   " + m.salary +"  "+ m.address);
+
+	}
+
+}

@@ -1,0 +1,104 @@
+SHAPE:
+package Inheritance;
+
+public class Shape {
+     void returnshape()
+     {
+    	 System.out.println("this is shape:");
+     }
+	public static void main(String[] args) {
+		
+	}
+
+}
+
+CIRCLE:
+package Inheritance;
+
+public class Circle extends Shape {
+ void printshape() {
+	 System.out.println("This is circular shape");
+ }
+}
+
+RECTANGLE:
+package Inheritance;
+
+public class Rectangle extends Shape {
+   
+   void printshape()
+   {
+	   System.out.println("This is rectangular shape");
+   }
+   
+}
+
+	class Square extends Rectangle{
+		void printshape() {
+			System.out.println("Square is rectangle");
+		}
+	}
+
+SQUARE:
+package Inheritance;
+
+ class Square extends Shape{
+	 public static void main(String Rgs[])
+	 {
+		 Square s = new Square();
+		  s.printshape();
+	 }
+}
+
+
+
+
+
+
+
+
+
+package Inheritance;
+RECTANGLE AREA
+public class Rectangle {
+   int length ;
+   int breadth;
+   public Rectangle(int l , int b)
+   {
+	   length =l;
+	   breadth = b;
+   }
+   public int getArea() {
+	   return length*breadth;
+   }
+   public int getPerimeter() {
+	   return 2*(length+breadth);
+   }
+   public static void main(String[] args) {
+	Rectangle r1 = new Rectangle(4,5);
+	Rectangle r2 = new Rectangle(5,8);
+	System.out.println("area :" +r1.getArea()+ "Perimeter is " +r1.getPerimeter());
+	System.out.println("area :" +r2.getArea()+ "Perimeter is " +r2.getPerimeter());
+	
+}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

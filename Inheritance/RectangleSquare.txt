@@ -1,0 +1,38 @@
+
+package Inheritance;
+
+public class Rectangle {
+   int length , breadth;
+   public Rectangle(int l,int b)
+   {
+	   length= l;
+	   breadth = b;
+   }
+   void printArea() {
+	   System.out.println(length*breadth);
+   }
+   void perimeter() {
+	   System.out.println(2*(length+breadth));
+   }
+   
+}
+
+
+
+package Inheritance;
+
+ class Square extends Rectangle {
+
+	public Square(int l, int b) {
+		super(l, b);
+	}
+	public static void main(String[] args) {
+		Rectangle r = new Rectangle(4,5);
+		Square s = new Square(4,4);
+		r.printArea();
+		r.perimeter();
+		s.printArea();
+		s.perimeter();
+	}
+
+}

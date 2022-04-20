@@ -1,0 +1,103 @@
+SHAPE:
+package Inheritance;
+
+public class Shape {
+     void returnshape()
+     {
+    	 System.out.println("this is shape:");
+     }
+	public static void main(String[] args) {
+		
+	}
+
+}
+
+CIRCLE:
+package Inheritance;
+
+public class Circle extends Shape {
+ void printshape() {
+	 System.out.println("This is circular shape");
+ }
+}
+
+RECTANGLE:
+package Inheritance;
+
+public class Rectangle extends Shape {
+   
+   void printshape()
+   {
+	   System.out.println("This is rectangular shape");
+   }
+   
+}
+
+	class Square extends Rectangle{
+		void printshape() {
+			System.out.println("Square is rectangle");
+		}
+	}
+
+SQUARE:
+package Inheritance;
+
+ class Square extends Shape{
+	 public static void main(String Rgs[])
+	 {
+		 Square s = new Square();
+		  s.printshape();
+	 }
+}
+
+
+
+
+
+
+
+
+
+package Inheritance;
+
+public class Triangle {
+int a, b, c;
+double getArea() {
+	double s = (a+b+c)/2.0;
+	return Math.pow((s*(s-a)*(s-b)*(s-c)), .5);
+}
+double getPerimeter() {
+	return (a+b+c)/2.0;
+}
+	public static void main(String[] args) {
+		Triangle t = new Triangle();
+		t.a = 3;
+		t.b = 4;
+		t.c = 5;
+		System.out.println(t.getArea());
+		System.out.println(t.getPerimeter());		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

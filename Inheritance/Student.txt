@@ -1,0 +1,13 @@
+package Inheritance;
+
+public class Student {
+  String name;
+  int rollno;
+	public static void main(String[] args) {
+		Student s = new Student();
+		s.name="john";
+		s.rollno=2;
+		System.out.println(s.name+"  "+s.rollno);
+	}
+
+}

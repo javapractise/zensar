@@ -1,0 +1,13 @@
+package Inheritance;
+
+ class Inheritance1  {
+  private void  parent() {
+		System.out.println("This is parent class");
+	}
+
+	public static void main(String[] args) {
+	Inheritance1 a = new Inheritance1();	
+	a.parent();
+	}
+
+}

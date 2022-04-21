@@ -23,6 +23,6 @@ public class NestedInterfaceDemo{
 		main m = new main();
 		m.display1();
 		outer n = new outer();
-		n.display;
+		n.display();
 	}
 }

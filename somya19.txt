@@ -1,0 +1,95 @@
+Hierarchical Inheritance :
+
+class Animal{  
+void eat()
+{
+System.out.println("eating...");
+}  
+}  
+class Dog extends Animal{  
+void bark(){System.out.println("barking...");
+}  
+}  
+class Cat extends Animal{  
+void meow(){System.out.println("meowing...");
+}  
+}  
+class Inheritance3{  
+public static void main(String args[])
+{  
+Cat c=new Cat();  
+c.meow();  
+c.eat();   
+}
+} 
+
+
+
+interface AnimalEat {
+   void eat();
+}
+interface AnimalTravel {
+   void travel();
+}
+class Animal implements AnimalEat, AnimalTravel {
+   public void eat() {
+      System.out.println("Animal is eating");
+   }
+   public void travel() {
+      System.out.println("Animal is travelling");
+   }
+}
+public class Demo {
+   public static void main(String args[]) {
+      Animal a = new Animal();
+      a.eat();
+      a.travel();
+   }
+}
+
+
+
+
+package nestedInterfaceProgram; 
+public class VehicleTypes 
+{ 
+  interface Vehicle 
+  { 
+    public int getNoOfWheels(); 
+  } 
+} 
+public class Bus implements VehicleTypes.Vehicle 
+{ 
+  public int getNoOfWheels() 
+  { 
+      return 6; 
+  } 
+} 
+public class Car implements VehicleTypes.Vehicle 
+{ 
+  public int getNoOfWheels() 
+  { 
+    return 4; 
+  } 
+} 
+public class Bike implements VehicleTypes.Vehicle
+{ 
+  public int getNoOfWheels()
+  { 
+     return 2; 
+   } 
+ } 
+public class VehicleTest 
+{ 
+  public static void main(String[] args) 
+  { 
+    Bus b = new Bus(); 
+    System.out.println(b.getNoOfWheels()); 
+
+    Car c = new Car(); 
+    System.out.println(c.getNoOfWheels()); 
+
+    Bike bk = new Bike(); 
+    System.out.println(bk.getNoOfWheels()); 
+   } 
+}

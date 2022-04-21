@@ -31,9 +31,9 @@ public class car {
         {
         	for(j=0;j<m;j++)
         	{
-        		if(mat[i][j]!=-1 && mat[i][j]!=0)
+        		if(mat[i][j]==1)
         		{
-        			people=people+mat[i][j];
+        			people=people+1;
         		}
         		
         	}

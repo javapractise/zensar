@@ -1,0 +1,33 @@
+1) Employee records where salary of employee is greater than 57 k and less than 75 k?
+select * from emp where sal > 57000 AND sal < 75000;
+
+2) What is query to find out fourth highest salary of employee?
+select max(sal) from emp where sal <(select max(sal) from emp where sal < (select max(sal) from emp where sal < (select max(sal) from emp)));
+
+3) What is query to find out the Students whose names starts with S,K,U?
+SELECT * FROM employee.student where name like 'S%' or name like 'K%' or name like 'U%';
+
+4) How to get information of students who is not assingned to any class.
+select * from employee.student where class is null;
+
+5) How to fetch  monthly Salary of Employee if annual salary is given?
+select annual_sal/12 as sal from employee.emp;
+
+6) How to get 3 Highest salaries records from Employee table?
+select * from emp where sal > (select max(sal) from emp where sal <(select max(sal) from emp where sal < (select max(sal) from emp where sal < (select max(sal) from emp))));
+
+7) How to fetch 3rd highest salary using Rank Function?
+select * from (SELECT DENSE_RANK() OVER (ORDER BY SAL desc) my_rank,empId,sal,name FROM EMPLOYEE)
+where my_rank<=3;
+
+8) What is SQL Query to find maximum salary of each department?
+select dept_no,max(sal) from employee.emp group by dept_no;
+
+9) Display the name of employees who have joined in 2016 and salary is greater than 10000?
+select * from employee.emp where sal > 10000 and joining_date like '%2016';
+
+10) How to Find the Joining date of Employee in YYYY-DAY-Date format.
+SELECT DATE_FORMAT(joining_date, '%Y-%a-%e') AS Modified_Date FROM EMPLOYEE.EMP;
+
+11) Write an SQL query to fetch duplicate records from EmployeeDetails.
+select * from emp_details group by name having count(name)>1;

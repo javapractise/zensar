@@ -1,0 +1,33 @@
+create database mysql2022;
+
+create table mysql2022.employee (id int, name varchar(100),age int, city varchar(100),salary int,designation varchar(100));
+
+insert into employee values(1001,"rohit",23,"vijayawada",30000,software);
+insert into employee values(1002,"sameer",21,"sanat nagar",29000,software);
+insert into employee values(1003,"zakeer",22,"hyd",32000,software);
+insert into employee values(1004,"dinesh",24,"hyderabad",10000,engineer);
+insert into employee values(1005,"pavan",26,"vijayawada",40000,mechanical );
+
+select * from employee;
+
+update employee set designation="mechanical" where id=1004;
+
+alter table employee add Email varchar(255);
+
+delete from employee where id=1005;
+
+delete table employee;
+-----------------------------------------------------------------------------
+2nd task 
+1)select * from employee where salary>57000 and salary<75000;
+3)select name from student_tbl where name like's%' or name like 'k'or name like 'u';
+4)select * from students where stud_class=NULL;
+5)select name,Salary/12 as ‘Monthly Salary’ from employee;
+6)select salary from employee oreder by salary desc,where rownum=3;
+8)select id,max salary from employee group by department;
+9)select name from employee where join_year=2016 and salary>10000;
+11)select * from employee groupby id having count(*)>1;
+
+
+
+

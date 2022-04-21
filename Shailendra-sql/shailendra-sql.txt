@@ -1,0 +1,48 @@
+Employee records where salary of employee is greater than 57 k and less than 75 k?
+
+SELECT * FROM employee WHERE Salary > 57000 or Salary < 75000;
+----------------------------------------------
+What is query to find out fourth highest salary of employee?
+
+SELECT salary FROM Employee ORDER BY salary desc LIMIT 3,1;
+
+-------------------------------------------------------------------------
+What is query to find out the Students whose names starts with S,K,U?
+
+SELECT * FROM employee WHERE Name LIKE 'S%' OR Name LIKE 'k%' OR Name LIKE 'U%' 
+----------------------------------------------------------------------------------
+
+How to get information of students who is not assingned to any class.
+select class from employee where student is null;
+---------------------------------------------------------------------------
+How to fetch  monthly Salary of Employee if annual salary is given?
+SELECT Name, round(Salary/12,2) AS 'Monthly Salary' ,
+salary_year AS 'Annual Salary' FROM employee;
+--------------------------------------------------------------------------
+How to get 3 Highest salaries records from Employee table?
+select max(salary),department from employee group by department;
+--------------------------------------------------------------
+How to fetch 3rd highest salary using Rank Function?
+select * from (
+	select *,
+		DENSE_RANK () OVER ( 
+			ORDER BY salary DESC
+		) toprank
+	FROM
+		employee
+) e
+WHERE toprank <= 3;
+-----------------------------------------------------------------
+What is SQL Query to find maximum salary of each department?
+SELECT department, MAX(salary) FROM employees GROUP BY department;
+-----------------------------------------------------------------------------
+Display the name of employees who have joined in 2016 and salary is greater than 10000?
+select * from employee  where year_of_joining like 2016 and salary > 10000;
+--------------------------------------------------------------------
+
+How to Find the Joining date of Employee in YYYY-DAY-Date format.
+ SELECT name, TO_CHAR(DOJ, 'YYYY-DAY-DD') "DATES" FROM employee;
+
+
+Write an SQL query to fetch duplicate records from EmployeeDetails.
+select name,salary, count(salary) from employee group by salary;

@@ -1,0 +1,23 @@
+//one interface extending another interface
+package Interface;
+
+interface Movies{
+	public void watch();
+}
+
+interface Director extends Movies{
+	public void direct();
+	
+}
+
+class Competition implements Director{
+	public void watch()
+	{
+		System.out.println("watching the movies");
+	}
+	public void direct()
+	{
+		System.out.println("directing movies");
+	}
+	
+}

@@ -1,0 +1,17 @@
+//class implements interface:
+
+package Interface;
+public interface Employee {
+String name="divya";
+int age=22;
+void print() ;
+;}
+
+class Person implements Employee {
+	public void print() {
+		System.out.println("abd");
+	}
+	public static void main(String[] args) {
+		Person p = new Person();
+		p.print();	}
+}

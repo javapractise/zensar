@@ -10,7 +10,7 @@ void bark()
 {
 System.out.println("barking...");}  
 }  
-class TestInheritance
+class Inheritance
 {  
 public static void main(String args[]){  
 Dog d=new Dog();  
@@ -34,7 +34,7 @@ class BabyDog extends Dog
 {  
 void weep(){System.out.println("weeping...");}  
 }  
-class TestInheritance2
+class Inheritance2
 {  
 public static void main(String args[])
 {  
@@ -63,7 +63,7 @@ class Cat extends Animal{
 void meow(){System.out.println("meowing...");
 }  
 }  
-class TestInheritance3{  
+class Inheritance3{  
 public static void main(String args[])
 {  
 Cat c=new Cat();  

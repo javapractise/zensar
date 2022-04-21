@@ -21,8 +21,8 @@ public class NestedInterfaceDemo{
 	public static  void main (String args[])
 	{
 		main m = new main();
-		m.show1();
-		outer o = new outer();
-		o.show();
+		m.display1();
+		outer n = new outer();
+		n.display;
 	}
 }

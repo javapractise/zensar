@@ -1,0 +1,22 @@
+create databse student;
+use student;
+create table stud(
+
+id int(10) not null primary key auto_increment,
+name varchar(45),
+age int(10)
+);
+
+alter table  student add column city varchar(45);
+
+insert into student(name,age) values 
+("hemanth ",22,"nellore"),
+("naveen",22,"gudur"),
+("ravi ",22,"hyd"),
+("vikas ",22,"nellore"),
+("hari",22,"nellore");
+
+select * from stud;
+select name from stud;
+
+update stud set city='Hydrabad' where id='1';

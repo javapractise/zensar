@@ -1,0 +1,40 @@
+
+package interface
+public interface Vehicle_type {
+	public void drive();
+	default public void wheels()
+	{
+		System.out.println("no.of wheels vehicle has:2");
+	}
+
+}
+
+
+
+
+
+package interface
+public class main1 {
+
+	public static void main(String[] args) {
+		vehicletype obj=new main();
+		obj.drive();
+
+	}
+
+
+
+	}
+
+
+
+
+package interface
+public class main implements vehicles_type{
+
+	public void drive() {
+		System.out.println("with handle");
+
+	}
+
+}

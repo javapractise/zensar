@@ -1,0 +1,16 @@
+package Training;
+
+public class Boxing {
+
+	public static void main(String[] args) {
+				int a=22;
+				Integer a2=new Integer(a);
+				Integer a3=15 ;
+				System.out.println(a2+"   "+a3);
+			}
+
+		}
+
+	
+
+

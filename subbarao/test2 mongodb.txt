@@ -1,0 +1,29 @@
+@@ -121,4 +121,27 @@ function() {
+        "name" : "rama",
+        "department" : "Designing",
+        "salary" : 28000
+}
+}
+> db.Employees.deleteOne({_id:8});
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.Employees.find();
+{ "_id" : 1, "name" : "Subbu", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 2, "name" : "Ram", "department" : "Developing", "salary" : 35000 }
+{ "_id" : 3, "name" : "Venky", "department" : "Testing", "salary" : 28000 }
+{ "_id" : 4, "name" : "Anil", "department" : "Testing", "salary" : 27000 }
+{ "_id" : 5, "name" : "Varam", "department" : "Designing", "salary" : 22000 }
+{ "_id" : 6, "name" : "Sathish", "department" : "Production", "salary" : 27000 }
+{ "_id" : 7, "name" : "Krishna", "department" : "Production", "salary" : 27000 }
+> db.Employees.deleteMany({department: "Production"});
+{ "acknowledged" : true, "deletedCount" : 2 }
+> db.Employees.find();
+{ "_id" : 1, "name" : "Subbu", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 2, "name" : "Ram", "department" : "Developing", "salary" : 35000 }
+{ "_id" : 3, "name" : "Venky", "department" : "Testing", "salary" : 28000 }
+{ "_id" : 4, "name" : "Anil", "department" : "Testing", "salary" : 27000 }
+{ "_id" : 5, "name" : "Varam", "department" : "Designing", "salary" : 22000 }
+> db.Employees.find({$or: [{department:"Developing"}, {department:"Testing"}]});
+{ "_id" : 1, "name" : "Subbu", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 2, "name" : "Ram", "department" : "Developing", "salary" : 35000 }
+{ "_id" : 3, "name" : "Venky", "department" : "Testing", "salary" : 28000 }
+{ "_id" : 4, "name" : "Varam", "department" : "Testing", "salary" : 27000 }

@@ -1,0 +1,484 @@
+package oops;
+
+public class mainclass {
+ void parent()
+	{
+		System.out.println("this is parent class");
+	}
+
+	public static void main(String[] args) {
+	mainclass sc=new mainclass();
+	sc.parent();
+
+	}
+
+}
+
+
+
+
+
+package oops;
+
+public class subclass extends mainclass {
+	void child()
+	{
+		System.out.println("this is child class");
+	}
+
+	public static void main(String[] args) {
+		subclass sc1=new subclass();
+		sc1.child();
+		sc1.parent();
+
+	}
+
+}                      
+   
+revathi/master1.java
+
+package oops;
+
+public class mainclass {
+ private void parent()
+	{
+		System.out.println("this is parent class");
+	}
+
+	public static void main(String[] args) {
+	mainclass sc=new mainclass();
+	sc.parent();
+
+	}
+
+}
+
+
+
+
+
+package oops;
+
+public class subclass extends mainclass {
+	void child()
+	{
+		System.out.println("this is child class");
+	}
+
+	public static void main(String[] args) {
+		subclass sc1=new subclass();
+		sc1.child();
+
+
+	}
+
+}             
+   
+revathi/master2.java
+
+package oops;
+
+import java.util.Scanner;
+
+public class member {
+		String name="null";
+		int age;
+		double phnum;
+		String address="null";
+		float salary;
+	void PrintSalary()
+	{
+		System.out.println(salary);	
+	}
+
+}
+
+
+
+
+package oops;
+
+import java.util.Scanner;
+
+public class employee extends member{
+	 static String specialization;
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+	member mem=new member();
+	mem.name=sc.next();
+	mem.age=sc.nextInt();
+	mem.phnum=sc.nextDouble();
+	mem.address=sc.next();
+	specialization=sc.next();
+
+System.out.print(mem.name+" "+mem.age+" "+mem.phnum+" "+mem.address+" "+mem.salary+" "+specialization);
+	}
+
+}
+
+
+
+
+package oops;
+
+import java.util.Scanner;
+
+public class manager extends member {
+static String department;
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		member sc1=new member();
+		sc1.name=sc.next();
+		sc1.age=sc.nextInt();
+		sc1.phnum=sc.nextDouble();
+		sc1.address=sc.next();
+		sc1.salary=sc.nextFloat();
+		department=sc.next();
+		System.out.print(sc1.name+" "+sc1.age+" "+sc1.phnum+" "+sc1.address+" "+sc1.salary+" "+department);
+
+	}
+
+}
+   
+revathi/master3.java
+
+package oops;
+
+import java.util.Scanner;
+
+public class rectangle {
+	static int len;
+	static int bre;
+
+	public rectangle(int len, int bre) {
+		super();
+		this.len = len;
+		this.bre = bre;
+	}
+
+	int area()
+	{
+		Scanner sc=new Scanner(System.in);
+		rectangle a1=new rectangle(len, bre);
+		a1.len=sc.nextInt();
+		a1.bre=sc.nextInt();
+		int ar=(len+bre);
+		return ar;
+	}
+	int perimeter()
+	{
+		Scanner sc=new Scanner(System.in);
+		int len=sc.nextInt();
+		int bre=sc.nextInt();
+		int per=((2*len)+(2*bre));
+		return per;
+	}
+
+}
+
+
+
+
+
+
+package oops;
+
+import java.util.Scanner;
+
+public class square extends rectangle {
+
+	public square(int len, int bre) {
+		super(len, bre);
+
+	}
+
+	public static void main(String[] args) {
+		rectangle a3=new rectangle(len, bre);
+		square a4=new square(len, bre);
+		System.out.println("area of a rectangle :"+a3.area());
+		System.out.println("perimeter of a rectangle :"+a3.perimeter());
+		for(int i=0;i<10;i++)
+		{
+		System.out.println("area of a square :"+a4.area());
+		}
+		System.out.println("perimeter of a square :"+a4.perimeter());
+
+
+
+
+	}
+	int area()
+	{
+		Scanner sc=new Scanner(System.in);
+		int len=sc.nextInt();
+		int bre=sc.nextInt();
+		return len*bre;
+
+
+	}
+	int perimeter()
+	{
+		Scanner sc=new Scanner(System.in);
+		int len=sc.nextInt();
+
+		return 4*len;
+	}
+
+
+}
+   
+revathi/master4.java
+
+package oops;
+
+import java.util.Scanner;
+
+public class rectangle {
+	static int len;
+	static int bre;
+
+	public rectangle(int len, int bre) {
+		super();
+		this.len = len;
+		this.bre = bre;
+	}
+
+	int area()
+	{
+		Scanner sc=new Scanner(System.in);
+		rectangle a1=new rectangle(len, bre);
+		a1.len=sc.nextInt();
+		a1.bre=sc.nextInt();
+		int ar=(len+bre);
+		return ar;
+	}
+	int perimeter()
+	{
+		Scanner sc=new Scanner(System.in);
+		int len=sc.nextInt();
+		int bre=sc.nextInt();
+		int per=((2*len)+(2*bre));
+		return per;
+	}
+
+}
+
+
+
+
+
+package oops;
+
+import java.util.Scanner;
+
+public class square extends rectangle {
+
+	public square(int len, int bre) {
+		super(len, bre);
+
+	}
+
+	public static void main(String[] args) {
+		rectangle a3=new rectangle(len, bre);
+		square a4=new square(len, bre);
+		System.out.println("area of a rectangle :"+a3.area());
+		System.out.println("perimeter of a rectangle :"+a3.perimeter());
+		System.out.println("area of a square :"+a4.area());
+		System.out.println("perimeter of a square :"+a4.perimeter());
+
+
+
+
+	}
+	int area()
+	{
+		Scanner sc=new Scanner(System.in);
+		int len=sc.nextInt();
+		int bre=sc.nextInt();
+		return len*bre;
+
+
+	}
+	int perimeter()
+	{
+		Scanner sc=new Scanner(System.in);
+		int len=sc.nextInt();
+
+		return 4*len;
+	}
+
+
+}
+   
+revathi/master5.java
+
+package practice;
+public class shape {
+
+	public static void main(String[] args) {
+
+		method();
+
+	}
+	static void method()
+	{
+		System.out.println("this is this is shape");
+	}
+
+}
+
+
+
+package practice;
+
+public class rectangle extends shape{
+
+	public static void main(String[] args) {
+		method1();
+
+	}
+	static void method1()
+	{
+		System.out.println("this is rectangular shape");
+	}
+
+}
+
+
+
+
+
+package practice;
+
+public class circle extends shape{
+
+	public static void main(String[] args) {
+		square sc=new square();
+		sc.method();
+		sc.method1();
+		method2();
+
+	}
+	static void method2()
+	{
+		System.out.println("this is circular shape");
+	}
+
+}
+
+
+
+
+
+package practice;
+
+public class square extends rectangle{
+
+	public static void main(String[] args) {
+		method4();
+
+	}
+	static void method4()
+	{
+		System.out.println("square is a rectangle");
+	}
+
+}
+   
+revathi/master6.java
+
+package practice;
+
+import java.util.Scanner;
+
+public class triangle {
+	static int bre;
+	static int len;
+	static int hei;
+
+	public triangle() {
+
+	}
+
+	public static void main(String[] args) {
+		System.out.println(area());
+		System.out.println(perimeter());
+
+
+	}
+	static int area()
+	{
+		Scanner sc=new Scanner(System.in);
+		bre=sc.nextInt();
+		hei=sc.nextInt();
+		return (bre*hei)/2;
+	}
+	static int perimeter()
+	{
+		Scanner sc=new Scanner(System.in);
+		bre=sc.nextInt();
+		hei=sc.nextInt();
+		len=sc.nextInt();
+		return bre*hei*len;
+	}
+
+}
+  
+revathi/master7.java
+
+package practice;
+
+import java.util.Scanner;
+
+public class average {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int sum=0;
+		for(int i=0;i<10;i++)
+		{
+			int n=sc.nextInt();
+			sum=sum+n;
+		}
+		System.out.print(sum/10);
+
+	}
+
+}
+   
+revathi/master8.java
+
+package practice;
+
+public class student {
+	String name="null";
+	int roll_no;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getRoll_no() {
+		return roll_no;
+	}
+
+	public void setRoll_no(int roll_no) {
+		this.roll_no = roll_no;
+	}
+
+	public static void main(String[] args) {
+		student obj=new student();
+		obj.setRoll_no(2);
+		obj.setName("john");
+		System.out.println(obj.name);
+		System.out.println(obj.roll_no);
+
+
+	}
+
+
+}

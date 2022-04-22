@@ -1,0 +1,29 @@
+[{
+  "_id": {
+    "$oid": "625d1b1bb386e868362b500b"
+  },
+  "emp_id": "001",
+  "emp_name": "hemanth",
+  "emp_salary": "45000"
+},{
+  "_id": {
+    "$oid": "625d1c08b386e868362b500c"
+  },
+  "emp_id": "002",
+  "emp_name": "naveen",
+  "emp_salary": "55000"
+},{
+  "_id": {
+    "$oid": "625d1c23b386e868362b500d"
+  },
+  "emp_id": "003",
+  "emp_name": "harsha",
+  "emp_salary": "35000"
+},{
+  "_id": {
+    "$oid": "625d1c3db386e868362b500e"
+  },
+  "emp_id": "004",
+  "emp_name": "tharun",
+  "emp_salary": "25000"
+}]

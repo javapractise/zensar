@@ -1,0 +1,109 @@
+> db.employee.insertMany([{"name":"Yaseswini","id":"4568","dept":"ECE","address":"visakhapatnam"},{"name":"Akhila","id":"4569","dept":"developer","address":"Hyderabad"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("625d555247fc90fb7a7264d2"),
+                ObjectId("625d555247fc90fb7a7264d3")
+        ]
+}
+> db.employee.updateMany({name:"reva"},{$set:{name:"revathi"}})
+{ "acknowledged" : true, "matchedCount" : 0, "modifiedCount" : 0 }
+> db.employee.deleteMany({location:"visakhapatnam"})
+{ "acknowledged" : true, "deletedCount" : 0 }
+> db.employee.find().pretty()
+{
+        "_id" : ObjectId("625d4840c2f7297897d69285"),
+        "name" : "Nitya",
+        "id" : "4567",
+        "dept" : "software",
+        "address" : "pune"
+}
+{
+        "_id" : ObjectId("625d4af0c2f7297897d69286"),
+        "name" : "Yaseswini",
+        "id" : "4568",
+        "dept" : "ECE",
+        "address" : "visakhapatnam"
+}
+{
+        "_id" : ObjectId("625d4af0c2f7297897d69287"),
+        "name" : "Akhila",
+        "id" : "4569",
+        "dept" : "developer",
+        "address" : "Hyderabad"
+}
+{
+        "_id" : ObjectId("625d554247fc90fb7a7264d1"),
+        "name" : "Nitya",
+        "id" : "4567",
+        "dept" : "software",
+        "address" : "pune"
+}
+{
+        "_id" : ObjectId("625d555247fc90fb7a7264d2"),
+        "name" : "Yaseswini",
+        "id" : "4568",
+        "dept" : "ECE",
+        "address" : "visakhapatnam"
+}
+{
+        "_id" : ObjectId("625d555247fc90fb7a7264d3"),
+        "name" : "Akhila",
+        "id" : "4569",
+        "dept" : "developer",
+        "address" : "Hyderabad"
+}
+> db.employee.find().pretty
+function() {
+    this._prettyShell = true;
+    return this;
+}
+> db.employee.find({$or: [{address : "visakhapatnam"}, {address: "chennai"}]})
+{ "_id" : ObjectId("625d4af0c2f7297897d69286"), "name" : "Yaseswini", "id" : "4568", "dept" : "ECE", "address" : "visakhapatnam" }
+{ "_id" : ObjectId("625d555247fc90fb7a7264d2"), "name" : "Yaseswini", "id" : "4568", "dept" : "ECE", "address" : "visakhapatnam" }
+> db.employee.find()
+{ "_id" : ObjectId("625d4840c2f7297897d69285"), "name" : "Nitya", "id" : "4567", "dept" : "software", "address" : "pune" }
+{ "_id" : ObjectId("625d4af0c2f7297897d69286"), "name" : "Yaseswini", "id" : "4568", "dept" : "ECE", "address" : "visakhapatnam" }
+{ "_id" : ObjectId("625d4af0c2f7297897d69287"), "name" : "Akhila", "id" : "4569", "dept" : "developer", "address" : "Hyderabad" }
+{ "_id" : ObjectId("625d554247fc90fb7a7264d1"), "name" : "Nitya", "id" : "4567", "dept" : "software", "address" : "pune" }
+{ "_id" : ObjectId("625d555247fc90fb7a7264d2"), "name" : "Yaseswini", "id" : "4568", "dept" : "ECE", "address" : "visakhapatnam" }
+{ "_id" : ObjectId("625d555247fc90fb7a7264d3"), "name" : "Akhila", "id" : "4569", "dept" : "developer", "address" : "Hyderabad" }
+> db.employee.deleteOne({"name":"yaseswini"})
+{ "acknowledged" : true, "deletedCount" : 0 }
+> db.employee.find()
+{ "_id" : ObjectId("625d4840c2f7297897d69285"), "name" : "Nitya", "id" : "4567", "dept" : "software", "address" : "pune" }
+{                                                                                       pt" : "ECE", "address" : "visakhapatnam" }
+> db.employee.insertOne({"name":"Nitya","id":"4567","dept":"software","address":"pune"})
+> db.employee.insertMany([{"name":"Yaseswini","id":"4568","dept":"ECE","address":"visakhapatnam"},{"name":"Akhila","id":"4569","dept":"developer","address":"Hyderabad"}
+> db.employee.insertOne({"name":"Nitya","id":"4567","dept":"software","address":"pune"})
+> db.employee.insertMany([{"name":"Yaseswini","id":"4568","dept":"ECE","address":"visakhapatnam"},{"name":"Akhila","id":"4569","dept":"developer","address":"Hyderabad"}
+> db.employee.find({$or: [{address : "visakhapatnam"}, {address: "chennai"}]})
+> db.employee.deleteMany({"name":"yaseswini"},{"name":"yaseswini"})
+{ "acknowledged" : true, "deletedCount" : 0 }
+> db.employee.deleteMany({"id":"4568","name":"yaseswini"},{ "id":"4568","name":"yaseswini"})
+{ "acknowledged" : true, "deletedCount" : 0 }
+> db.employee.deleteOne({"id":"4568"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.employee.find()
+{ "_id" : ObjectId("625d4840c2f7297897d69285"), "name" : "Nitya", "id" : "4567", "dept" : "software", "address" : "pune" }
+{ "_id" : ObjectId("625d4af0c2f7297897d69287"), "name" : "Akhila", "id" : "4569", "dept" : "developer", "address" : "Hyderabad" }
+{ "_id" : ObjectId("625d554247fc90fb7a7264d1"), "name" : "Nitya", "id" : "4567", "dept" : "software", "address" : "pune" }
+{ "_id" : ObjectId("625d555247fc90fb7a7264d2"), "name" : "Yaseswini", "id" : "4568", "dept" : "ECE", "address" : "visakhapatnam" }
+{ "_id" : ObjectId("625d555247fc90fb7a7264d3"), "name" : "Akhila", "id" : "4569", "dept" : "developer", "address" : "Hyderabad" }
+> db.employee.deleteOne({"id":"4569"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.employee.insertMany([{"name":"Yaseswini","id":"4568","dept":"ECE","address":"visakhapatnam"},{"name":"Akhila","id":"4569","dept":"developer","address":"Hyderabad"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("625d6bed47fc90fb7a7264d4"),
+                ObjectId("625d6bed47fc90fb7a7264d5")
+        ]
+}
+> db.employee.deleteMany({"id":"4569"})
+{ "acknowledged" : true, "deletedCount" : 2 }
+> db.employee.find()
+{ "_id" : ObjectId("625d4840c2f7297897d69285"), "name" : "Nitya", "id" : "4567", "dept" : "software", "address" : "pune" }
+{ "_id" : ObjectId("625d554247fc90fb7a7264d1"), "name" : "Nitya", "id" : "4567", "dept" : "software", "address" : "pune" }
+{ "_id" : ObjectId("625d555247fc90fb7a7264d2"), "name" : "Yaseswini", "id" : "4568", "dept" : "ECE", "address" : "visakhapatnam" }
+{ "_id" : ObjectId("625d6bed47fc90fb7a7264d4"), "name" : "Yaseswini", "id" : "4568", "dept" : "ECE", "address" : "visakhapatnam" }

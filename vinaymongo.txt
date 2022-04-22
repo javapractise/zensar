@@ -1,0 +1,27 @@
+{
+  "_id": {
+    "$oid": "625d3ad3b9cd5114c84810b2"
+  },
+  "name": "vinay",
+  "dept": "IT",
+  "salary": "25000",
+  "location": "hyd"
+}
+{
+  "_id": {
+    "$oid": "625d3b8eb9cd5114c84810b3"
+  },
+  "name": "hani",
+  "dept": "IT",
+  "salary": "30000",
+  "location": "hyd"
+}
+{
+  "_id": {
+    "$oid": "625d3bacb9cd5114c84810b4"
+  },
+  "name": "deepu",
+  "dept": "IT",
+  "salary": "40000",
+  "location": "goa"
+}

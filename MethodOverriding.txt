@@ -1,0 +1,39 @@
+class Vehicle {
+	 void print() {
+		System.out.println("Vehicle class");
+	}
+}
+
+class Car extends Vehicle {
+	 void print() {
+		System.out.println("Car class");
+	}
+}
+
+class Bike extends Vehicle {
+	 void print() {
+		System.out.println(" Bike class");
+	}
+}
+
+class Truck extends Vehicle {
+	 void print() {
+		System.out.println("Truck  class");
+	}
+}
+
+public class polymorphism {
+
+	public static void main(String[] args) {
+		Vehicle v= new Vehicle;
+                Car c= new Car();
+		Bike b = new Bike();
+		Truck t= new Truck();
+		v.print();
+		c.print();
+		b.print();
+		t.print();
+	System.out.println(v.print+ "  " +c.print+"   " +b.print+"   " +t.print	);
+		
+
+	}

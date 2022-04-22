@@ -1,0 +1,17 @@
+package javapractice;
+import java.util.Scanner;
+
+public class Substring {
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+
+		String str =sc.next();
+		String str1=str.substring(7);
+		System.out.println(str1);
+		str1=str.substring(3, 7);
+		System.out.println(str1);
+
+	}
+		
+	}

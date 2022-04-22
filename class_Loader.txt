@@ -1,0 +1,11 @@
+public class classLoader {
+	
+	public static void main(String[] args) {
+		Class A =classLoader.Class;
+                System.out.println(classLoader.Class);
+
+		System.out.println(String.class.getClassLoader());
+
+	}
+
+}

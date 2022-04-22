@@ -1,0 +1,15 @@
+// UnBoxing in Java
+import java.util.*;
+import java.util.lang; 
+import java.util.Scanner;
+
+public class UnBoxing {
+
+	  public static void main(String args[]){  
+	    Integer i=new Integer(50);  
+	        int a=i;  
+	          
+	        System.out.println(a);  
+	 }   
+} 
+

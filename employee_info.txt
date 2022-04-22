@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "625d2d68051ab1f679fdb391"
+  },
+  "employee name": "abhi",
+  "employee Id": "4352",
+  "salary": "4LPA",
+  "department": "junior software Engineer"
+},{
+  "_id": {
+    "$oid": "625d2df1051ab1f679fdb392"
+  },
+  "employee name": "jin",
+  "employee Id": "1234",
+  "salary": "3LPA",
+  "department": "junior software Engineer"
+},{
+  "_id": {
+    "$oid": "625d2e35051ab1f679fdb393"
+  },
+  "employee name": "ramya",
+  "employee Id": "5678",
+  "salary": "5LPA",
+  "department": "junior software Engineer"
+},{
+  "_id": {
+    "$oid": "625d2e70051ab1f679fdb394"
+  },
+  "employee name": "surya",
+  "employee Id": "3267",
+  "salary": "6LPA",
+  "department": "junior software Engineer"
+}]

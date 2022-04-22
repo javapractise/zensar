@@ -1,0 +1,147 @@
+class College
+{
+	String name="Spec";
+	String dept="CSE";
+	void display() {
+		System.out.println("Name of organization is:"+name);
+	}
+}
+class Student extends College{
+	String student="abc";
+	void display1() {
+		System.out.println("Name of student is:"+student);
+	}
+}
+class Departments extends College{
+	void display2()
+	{
+		System.out.println("Department of studnet is:"+dept);
+	}
+}
+public class Hierarchical{
+	public static void main(String[] args)
+	{
+		Department d= new Department();
+		Student s =new Student();
+		d.display();
+		d.display2();
+		s.display();
+		s.display1();
+	}
+
+} 
+  
+anusha/MethodOverloading.java
+/*Method Overloading*/
+
+class Employee{
+	String name;
+	int age;
+	int phnnbr;
+	 int display(int salary,int age)
+	{
+		 System.out.println("salary:"+salary+","+"age:"+age);
+		 return salary;
+
+	}
+	int display(int salary,int age,int phnnbr)
+	{
+		System.out.println("salary:"+salary+","+"age:"+age+","+"phnnbr"+phnnbr);
+		return phnnbr;
+	}
+}
+
+public class MethodOverloading {
+	public static void main(String[] args)
+	{
+		Employee e =new Employee();
+		e.display(30000,30);
+		e.display(50000,25,9876543210);
+	}
+
+} 
+   
+Anusha/MethodOverriding.java
+
+/*Method overriding*/
+
+class Employee{
+	void display()
+	{
+		System.out.println("Id is 67741");
+	}
+}
+class  Id extends Employee{
+	void display()
+	{
+		System.out.println("Id is 21000");
+	}
+}
+public class MethodOverriding {
+	public static void main(String[] args)
+	{
+		Id i = new Id();
+		i.display();
+	}
+} 
+   
+Anusha/Multilevel.java
+
+class College
+{
+	String name="Spec";
+	String dept="CSE";
+	void display() {
+		System.out.println("Name of College is:"+name);
+	}
+}
+class Student extends College{
+	String stu_name="abc";
+	void display1() {
+		System.out.println("Name of Student is:"+stu_name);
+	}
+}
+class Deparment extends Student{
+	void display3()
+	{
+		System.out.println("Department of student is:"+dept);
+	}
+}
+public class Multilevel{
+	public static void main(String[] args)
+	{
+		Department d= new Department();
+		d.display();
+		d.display1();
+		d.display3();
+	}
+
+} 
+  
+Anusha/SingleInheritance.java
+
+class College
+{
+	String name="Spec";
+	void display() {
+		System.out.println("Name of clg is:"+name);
+	}
+}
+class Student extends College{
+	String student="abc";
+	void display1() {
+		System.out.println("Name of student is:"+student);
+	}
+}
+public class SingleInheritance{
+	public static void main(String[] args)
+	{
+		Student s= new Student();
+		s.display();
+		s.display1();
+	}
+
+} 
+
+ 
+ 

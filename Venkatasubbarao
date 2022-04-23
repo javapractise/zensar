@@ -1,0 +1,33 @@
+1) Creating Table
+------------------------
+create table Employee (ID int NOT NULL, Name varchar(40) NOT NULL, Location varchar(40) NOT NULL, Age int, PRIMARY KEY(ID));
+
+2) Inserting Data
+------------------------
+INSERT INTO Employee(ID, Name, Location, Age) VALUES(1234, "Akhil", "AP", 22);
+INSERT INTO Employee(ID, Name, Location, Age) VALUES(5678, "John", "US", 22);
+INSERT INTO Employee(ID, Name, Location, Age) VALUES(1278, "Robert", "US", 21);
+
+3) Updating Data
+------------------------
+UPDATE Employee
+SET Location = "NewYork"
+WHERE ID = 1234
+
+4) Deleting Data
+------------------------
+DELETE FROM Employee WHERE ID = 1278;
+
+5)Adding Column
+------------------------
+ALTER TABLE Employee
+ADD Email varchar(40);
+
+6) Deleting Column
+-----------------------
+ALTER TABLE Employee
+DROP COLUMN Email;
+
+7) Deleting Table
+-----------------------
+DROP TABLE Employee;

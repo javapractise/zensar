@@ -1,0 +1,22 @@
+> db.employee.aggregate({$group:{ _id :{department: "$department"}}});
+{ "_id" : { "department" : "testing" } }
+{ "_id" : { "department" : "marketing" } }
+{ "_id" : { "department" : "development" } }
+
+> db.employee.aggregate([ { $match : { department : "development" } } ]);
+{ "_id" : ObjectId("625d442fbc271be85d9dbc18"), "empId" : 1, "name" : "mahebub", "department" : "development", "salary" : 40000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc1b"), "empId" : 4, "name" : "henry", "department" : "development", "salary" : 28000 }
+
+> db.employee.aggregate([ { $sort : { name : 1 } } ]);
+{ "_id" : ObjectId("625d442fbc271be85d9dbc1b"), "empId" : 4, "name" : "henry", "department" : "development", "salary" : 28000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc19"), "empId" : 2, "name" : "john", "department" : "testing", "salary" : 35000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc18"), "empId" : 1, "name" : "mahebub", "department" : "development", "salary" : 40000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc1a"), "empId" : 3, "name" : "roy", "department" : "marketing", "salary" : 25000 }
+
+> db.employee.aggregate([{$match: {department: "development"}}, {$sort: {name: 1}}]);
+{ "_id" : ObjectId("625d442fbc271be85d9dbc1b"), "empId" : 4, "name" : "henry", "department" : "development", "salary" : 28000 }
+{ "_id" : ObjectId("625d442fbc271be85d9dbc18"), "empId" : 1, "name" : "mahebub", "department" : "development", "salary" : 40000 }
+
+> db.employee.aggregate([{$match: {department: "testing"}}, {$group: {_id: "$salary", employee: {$sum: 1}}}, {$sort: {name: 1}}]);
+{ "_id" : 35000, "employee" : 1 }
+

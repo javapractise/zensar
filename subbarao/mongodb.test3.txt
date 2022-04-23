@@ -1,0 +1,103 @@
+> db.Employees.find();
+{ "_id" : 1, "name" : "Subbu", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 2, "name" : "Ram", "department" : "Developing", "salary" : 35000 }
+{ "_id" : 3, "name" : "Venky", "department" : "Testing", "salary" : 28000 }
+{ "_id" : 4, "name" : "Anil", "department" : "Testing", "salary" : 27000 }
+{ "_id" : 5, "name" : "Varam", "department" : "Designing", "salary" : 22000 }
+{ "_id" : 7, "name" : "Krishna", "department" : "Production", "salary" : 25000 }
+{ "_id" : 8, "name" : "Sathish", "department" : "Production", "salary" : 25000 }
+{ "_id" : 6, "name" : "Durga", "department" : "Production", "salary" : 25000 }
+> db.Employees.aggregate([]);
+{ "_id" : 1, "name" : "Subbu", "department" : "Developing", "salary" : 40000 }
+{ "_id" : 2, "name" : "Ram", "department" : "Developing", "salary" : 35000 }
+{ "_id" : 3, "name" : "Venky", "department" : "Testing", "salary" : 28000 }
+{ "_id" : 4, "name" : "Anil", "department" : "Testing", "salary" : 27000 }
+{ "_id" : 5, "name" : "Varam", "department" : "Designing", "salary" : 22000 }
+{ "_id" : 7, "name" : "Krishna", "department" : "Production", "salary" : 25000 }
+{ "_id" : 8, "name" : "Sathish", "department" : "Production", "salary" : 25000 }
+{ "_id" : 6, "name" : "Durga", "department" : "Production", "salary" : 25000 }
+> db.Employees.aggregate([{$match: {department: "Production"}}]);
+{ "_id" : 7, "name" : "Krishna", "department" : "Production", "salary" : 25000 }
+{ "_id" : 8, "name" : "Sathish", "department" : "Production", "salary" : 25000 }
+{ "_id" : 6, "name" : "Durga", "department" : "Production", "salary" : 25000 }
+>
+>
+>
+>
+> db.Employees.aggregate([{$group: {_id: $department}}]);
+uncaught exception: ReferenceError: $department is not defined :
+@(shell):1:35
+> db.Employees.aggregate([{$group: {_id: "$department"}}]);
+{ "_id" : "Developing" }
+{ "_id" : "Production" }
+{ "_id" : "Designing" }
+{ "_id" : "Testing" }
+> db.Employees.aggregate([{$group: {_id: "$department", countOfEmployees: {$sum: 1}}}]);
+{ "_id" : "Production", "countOfEmployees" : 3 }
+{ "_id" : "Developing", "countOfEmployees" : 2 }
+{ "_id" : "Testing", "countOfEmployees" : 2 }
+{ "_id" : "Designing", "countOfEmployees" : 1 }
+>
+> db.Employees.updateOne({_id: 1}, {$set: {location: "India"}});
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+>
+>
+> db.Employees.find();
+{ "_id" : 1, "name" : "Subbu", "department" : "Developing", "salary" : 40000, "location" : "India" }
+{ "_id" : 2, "name" : "Ram", "department" : "Developing", "salary" : 35000 }
+{ "_id" : 3, "name" : "Venky", "department" : "Testing", "salary" : 28000 }
+{ "_id" : 4, "name" : "Anil", "department" : "Testing", "salary" : 27000 }
+{ "_id" : 5, "name" : "Varam", "department" : "Designing", "salary" : 22000 }
+{ "_id" : 7, "name" : "Krishna", "department" : "Production", "salary" : 25000 }
+{ "_id" : 8, "name" : "Sathish", "department" : "Production", "salary" : 25000 }
+{ "_id" : 6, "name" : "Durga", "department" : "Production", "salary" : 25000 }
+> db.Employees.updateOne({_id: 2}, {$set: {location: "US"}});
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.Employees.updateOne({_id: 3}, {$set: {location: "UK"}});
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.Employees.updateOne({_id: 4}, {$set: {location: "UK"}});
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.Employees.updateOne({_id: 5}, {$set: {location: "US"}});
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.Employees.updateOne({_id: 7}, {$set: {location: "India"}});
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.Employees.updateOne({_id: 8}, {$set: {location: "India"}});
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+>
+>
+> db.Employees.updateOne({_id: 6}, {$set: {location: "US"}});
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+>
+>
+>
+> db.Employees.find();
+{ "_id" : 1, "name" : "Subbu", "department" : "Developing", "salary" : 40000, "location" : "India" }
+{ "_id" : 2, "name" : "Ram", "department" : "Developing", "salary" : 35000, "location" : "US" }
+{ "_id" : 3, "name" : "Venky", "department" : "Testing", "salary" : 28000, "location" : "UK" }
+{ "_id" : 4, "name" : "Anil", "department" : "Testing", "salary" : 27000, "location" : "UK" }
+{ "_id" : 5, "name" : "Varam", "department" : "Designing", "salary" : 22000, "location" : "US" }
+{ "_id" : 7, "name" : "Krishna", "department" : "Production", "salary" : 25000, "location" : "India" }
+{ "_id" : 8, "name" : "sathish", "department" : "Production", "salary" : 25000, "location" : "India" }
+{ "_id" : 6, "name" : "Durga", "department" : "Production", "salary" : 25000, "location" : "US" }
+>
+>
+> db.Employees.aggregate([{$match: {location: "India"}}, {$group: {_id: {department: "$department"}, sumOfSalary: {$sum: 1}}}, {$sort: {name:1}}]);
+{ "_id" : { "department" : "Production" }, "sumOfSalary" : 2 }
+{ "_id" : { "department" : "Developing" }, "sumOfSalary" : 1 }
+
+
+> db.Employees.aggregate([{$match: {location: "India"}}]);
+{ "_id" : 1, "name" : "Subbu", "department" : "Developing", "salary" : 40000, "location" : "India" }
+{ "_id" : 7, "name" : "Krishna", "department" : "Production", "salary" : 25000, "location" : "India" }
+{ "_id" : 8, "name" : "Sathish", "department" : "Production", "salary" : 25000, "location" : "India" }
+> db.Employees.aggregate([{$match: {location: "India"}}, {$sort: {name: 1}}]);
+{ "_id" : 1, "name" : "Subbu", "department" : "Developing", "salary" : 40000, "location" : "India" }
+{ "_id" : 8, "name" : "Sathish", "department" : "Production", "salary" : 25000, "location" : "India" }
+{ "_id" : 7, "name" : "Krishna", "department" : "Production", "salary" : 25000, "location" : "India" }
+> db.Employees.aggregate([{$match: {location: "India"}}, {$group: {_id: "$salary", employees: {$sum: 1}}}, {$sort: {name: 1}}]);
+{ "_id" : 40000, "employees" : 1 }
+{ "_id" : 25000, "employees" : 2 }
+> db.Employees.aggregate([{$match: {location: "India"}}, {$group: {_id: "$name", employees: {$sum: 1}}}, {$sort: {name: 1}}]);
+{ "_id" : "Subbu", "employees" : 1 }
+{ "_id" : "Krishna", "employees" : 1 }
+{ "_id" : "Sathish", "employees" : 1 }

@@ -1,0 +1,16 @@
+package javapractice;
+
+public interface Name {
+
+void display() ;
+}
+
+class Abc  {
+public static void main(String args[])
+{
+Name n= new Name();
+public void display()
+ {
+System.out.println("name ");
+ }
+		

@@ -1,19 +1,36 @@
-interface salary{
-	int salary=25000;
-	void display();
+interface employee
+{
+	void data();
+	interface salary
+	{	
+		void amount();
+	}
+	interface department
+	{
+		void dept();
+	}
 }
 
-public class annonymous1 {
+class company implements employee{
+	public void data()
+	{
+		System.out.println("This is the data of the employee");
+	}
+	public void amount()
+	{
+		System.out.println("Salary amount of the employee is 25000");
+	}
+	public void dept()
+	{
+		System.out.println("Department of the employee is'software'");
+	}
+}
+public class nestedinter {
 	public static void main(String[] args)
 	{
-		salary s1= new salary()
-		{
-		public void display()
-		{
-			System.out.println("Salary of employee="+salary);
-		}
-		};
-		s1.display();
+		company c=new company();
+		c.data();
+		c.amount();
+		c.dept();
 	}
-
 }

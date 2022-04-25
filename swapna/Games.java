@@ -14,6 +14,6 @@ class TestAnnonymousInner
 			}  
   
 		};	
-		e.eat();  
+		e.games();  
 	}  
 } 

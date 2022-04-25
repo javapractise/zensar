@@ -1,0 +1,36 @@
+import java.util.Scanner;
+import java.io.*;
+
+class Emp{
+	int id;
+	String name;
+	Emp(int id, String name)
+	{
+		this.id = id;
+		this.name = name;
+	}
+	public boolean equals(Object obj)
+	{
+		if(this.id==id && this.name == name)
+		{	return true;	}
+		return false;
+	}
+}
+public class CompareObject{
+	public static void main(String[] args)
+	{
+		Emp e1 = new Emp(1, "John");
+		Emp e2 = new Emp(1, "John");
+		System.out.println(e1.equals(e2));
+		if(e1.equals(e2))
+		{
+			System.out.println(" !! Objects are same !!");
+		}
+		else
+		{
+			System.out.println(" !! Objects are NOT same !! ");
+		}
+
+
+	}
+}

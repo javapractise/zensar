@@ -1,0 +1,49 @@
+
+Package practice; 
+import java.util.Scanner;
+public class WordGuess {
+ public static void main(String[] args)
+ {
+Scanner scan = new Scanner(System.in);
+int n = scan.nextInt();
+String[] s = new String[n];
+String res = ""; 
+for (int i = 0; i < n; i++)
+ {
+s[i] = scan.next();
+if (s[i].length() % 2 != 0 && s[i].length() > res.length()) 
+{
+res = s[i];
+}
+} if (res.length() % 2 != 0) {
+System.out.println(res);
+} else {
+System.out.println("Better luck next time");
+}
+}
+}
+
+
+Output:
+sample input1:
+2
+naga bushitha
+
+sample output1:
+
+better luck next time
+
+sample input2:
+5
+hello good morning welcome yousample 
+
+output2:
+
+morning
+
+sample input3:
+2
+andhra pradesh
+
+sample output3:
+pradesh

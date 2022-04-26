@@ -1,0 +1,9 @@
+Output1:
+5
+Hello Good morning Welcome you
+morning
+
+Output2:
+3
+Go to hell
+Better luck next time

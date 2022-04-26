@@ -1,0 +1,16 @@
+D:\java trining\ptest>javac StrLength.java
+
+D:\java trining\ptest>java StrLength
+5
+hello world good welcome you
+welcome
+
+D:\java trining\ptest>java StrLength
+3
+Go to hell
+Better luck next time
+
+D:\java trining\ptest>java StrLength
+5
+Hello Good Morning Welcome You
+Morning

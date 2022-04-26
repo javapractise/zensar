@@ -20,16 +20,16 @@ public class games {
 		}
 		//to check the length of the string is odd or even 
 		
-		for (int i = 0; i < n; i++) {
-			if (s[i].length() % 2 != 0 )
+		for (int i=0;i<s.length;i++) {
+			if (s[i].length()%2!= 0)
 			{
-				if(s[i].length() > s1.length())
+				if(s[i].length()>s1.length())
 				{
 					s1 = s[i];
 				}
 			}
 		}
-		if (s1.length() % 2 != 0)
+		if (s1.length()%2!=0)
 		{
 			System.out.println(s1);
 		} 

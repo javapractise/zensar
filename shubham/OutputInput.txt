@@ -1,0 +1,19 @@
+	input: 
+	5
+	Hello
+	My 
+	Adventure
+	Always
+	Amazing.
+
+	Output:
+	Adventure
+
+	input:
+	3
+	He
+	Is
+	Rude
+
+	Output:
+	Try your Luck next time

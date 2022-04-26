@@ -1,0 +1,11 @@
+C:\Users\AG67741\Documents\mongo\Archana>javac Test.java
+
+C:\Users\AG67741\Documents\mongo\Archana>java Test
+5
+hello good morning welcome you
+morning
+
+C:\Users\AG67741\Documents\mongo\Archana>java Test
+3
+go to hell
+Better luck next time

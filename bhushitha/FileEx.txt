@@ -1,0 +1,18 @@
+package ExceptionHandling;
+import java.io.File;
+import java.io.FileReader;
+
+public class FileEx {
+
+	public static void main(String[] args) {
+
+		File obj=new File("D:bhushitha.txt");
+		try {
+		obj.exists();
+		}catch(Exception e)
+		{
+		System.out.println(e);
+		}
+	}
+}
+

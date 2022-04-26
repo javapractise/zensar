@@ -1,0 +1,17 @@
+package ExceptionHandling;
+
+public class Arithematic {
+
+	public static void main(String[] args) {
+		int x=10, y=0;
+		try {
+			int z=x/y;
+			System.out.println(z);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+
+}

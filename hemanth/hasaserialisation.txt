@@ -1,0 +1,46 @@
+//has a serialization
+package serialization;
+
+
+
+import java.io.Serializable;
+
+
+
+class main {
+public int roll_no;
+public String name;
+public int salary;
+public main(int roll_no, String name, int salary) {
+super();
+this.roll_no = roll_no;
+this.name = name;
+this.salary = salary;
+}
+
+
+
+}
+
+
+
+package serialization;
+
+
+
+import java.io.Serializable;
+
+
+
+public class hasaserialization implements Serializable{
+public int any;
+main main;
+public hasaserialization(int any, main main) {
+super();
+this.any = any;
+this.main = main;
+}
+
+
+
+}

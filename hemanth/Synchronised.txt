@@ -1,0 +1,21 @@
+package ExceptionHandling;
+
+public class Synchronisation {
+ public void send(String msg)
+ {
+	 synchronized(this)
+	 {
+		 System.out.println("Sending\t" +msg);
+		 try
+		 {
+			 Thread.sleep(500);
+		 }
+		
+		 catch(Exception e)
+		 {
+			 System.out.println("thread got  interrupted");
+		 }
+		 System.out.println("\n" +msg + "sent");
+	 }
+ }
+}

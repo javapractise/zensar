@@ -1,0 +1,29 @@
+package practice;
+import java.io.*;
+
+
+
+public class outpipe {
+
+
+
+public static void main(String[] args) throws IOException {
+PipedInputStream obj =new PipedInputStream();
+PipedOutputStream obj1 =new PipedOutputStream();
+obj.connect(obj1);
+byte[] buffer= {'h','e','m','a','n','t','h'};
+obj1.write(buffer,0,7);
+int a=8;
+System.out.print("written");
+while(a>0) {
+System.out.print(" " + (char) obj.read());
+}
+
+
+
+
+}
+
+
+
+}

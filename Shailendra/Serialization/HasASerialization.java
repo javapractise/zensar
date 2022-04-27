@@ -24,7 +24,7 @@ class Employee implements Serializable
 public class HasASerialization {
 
 	public static void main(String[] args) {
-		Address
+	
 	
 
 	}

@@ -1,0 +1,14 @@
+package ExceptionHandling;
+
+public class SetPriority extends Thread {
+ public void run()
+ {
+	 System.out.println("Thread priority is:" +Thread.currentThread().getPriority());
+ }
+	public static void main(String[] args) {
+		SetPriority s1 = new SetPriority();
+		s1.setPriority(Thread.MIN_PRIORITY);
+       s1.start();
+	}
+
+}

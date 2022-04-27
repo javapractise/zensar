@@ -1,0 +1,12 @@
+//serialversionuid
+Package serialization;
+import java.io.Serializable;
+class main implements Serializable{
+private static final long serialVersionUID=1L;
+int id;
+String name;
+public Student(int id, String name) {
+this.id = id;
+this.name = name;
+}
+}

@@ -1,0 +1,33 @@
+package ExceptionHandling;
+
+package ExceptionHandling;
+
+public class A extends Thread {
+	String msg="";
+ A(String msg)
+ {
+	 this.msg =msg;
+ }
+public void run()
+{
+	try {
+		while(true)
+		{
+			System.out.println(msg);
+			Thread.sleep(500);
+		}
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+}
+}
+ 
+class MainThread
+{
+	public static void main(String[] args) {
+		A a1 = new A("Running A....." );
+		a1.start();
+	}
+}

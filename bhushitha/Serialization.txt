@@ -1,0 +1,38 @@
+//main class
+
+package Serialization;
+public class main {
+public int id , salary;
+public String name;
+public main(int id, int salary , String name) {
+super();
+this.id = id;
+this.name = name;
+this.salary = salary;
+}
+}
+
+//serialization
+
+package Serialization;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
+public class Serialization {
+
+public static void main(String[] args) {
+try {
+main obj=new main(12,396, "bhushitha");
+FileOutputStream op=new FileOutputStream("D:bhushitha.txt");
+ObjectOutputStream os=new ObjectOutputStream(op);
+os.writeObject(obj);
+os.flush();
+os.close();
+System.out.println("serialized");
+}catch(Exception e)
+{
+System.out.println(e);
+}
+}
+}
+

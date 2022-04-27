@@ -1,0 +1,36 @@
+/package practice;
+import java.io.*;
+
+
+
+
+public class inputpipe {
+
+
+
+public static void main(String[] args) throws IOException {
+PipedInputStream obj =new PipedInputStream();
+PipedOutputStream obj1 =new PipedOutputStream();
+try
+{
+obj.connect(obj1);
+obj.write(71);
+System.out.println("using read(): " + (char)obj.read());
+obj1.write(75);
+System.out.println("using read(): " + (char)obj.read());
+}
+catch(IOException except) {
+except.printStackTrace();
+}
+
+
+
+
+
+
+}
+
+
+
+}
+

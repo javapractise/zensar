@@ -1,0 +1,41 @@
+///deserialization
+
+
+
+package serialization;
+
+
+
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
+
+
+public class deserialization {
+
+
+
+public static void main(String[] args) {
+try {
+main obj1=new main(13,"hemanth",3000);
+FileInputStream ip=new FileInputStream("D:hemanth1.txt");
+ObjectInputStream is=new ObjectInputStream(ip);
+is.readObject();
+System.out.println(obj1.name+""+obj1.roll_no+""+obj1.salary);
+is.close();
+}catch(Exception e) {
+System.out.println(e);
+}
+
+
+
+}
+
+
+
+
+}
+
+
+
+}

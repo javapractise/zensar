@@ -1,0 +1,64 @@
+//is a serialization
+package serialization;
+
+
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+
+
+class args implements Serializable{
+public int id;
+public String name;
+public args(int id, String name) {
+super();
+this.id = id;
+this.name = name;
+}
+
+}
+
+class Student extends Isaserialization {
+public student(int id, String name, String dept, int sal) {
+super();
+this.dept = dept;
+this.sal = sal;
+}
+public String dept;
+public int sal;
+
+}
+
+
+
+
+public class isaserialization {
+public static void main(String args[]) {
+try {
+student s1=new student(15,"bhushitha","jr.engineer",50000);
+FileOutputStream os=new FileOutputStream("D:bhushitha.txt");
+ObjectOutputStream vi=new ObjectOutputStream(os);
+vi.writeObject(s1);
+vi.flush();
+vi.close();
+System.out.println("serialized");
+}catch(Exception e) {
+System.out.println(e);
+}
+try {
+student s2=new student(22,"Sandya","sw engineer",40000);
+FileInputStream is=new FileInputStream("D:bhushitha.txt");
+ObjectInputStream as=new ObjectInputStream(is);
+as.readObject();
+as.close();
+System.out.println("successfull");
+}catch(Exception e) {
+System.out.println(e);
+}
+}
+
+}

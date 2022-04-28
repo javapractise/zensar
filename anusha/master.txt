@@ -1,0 +1,261 @@
+//main class
+
+
+
+package serialization;
+
+
+
+public class main {
+public int roll_no;
+public String name;
+public int salary;
+public main(int roll_no, String name, int salary) {
+super();
+this.roll_no = roll_no;
+this.name = name;
+this.salary = salary;
+}
+
+
+
+}
+
+
+
+//serialization
+package serialization;
+
+
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
+
+
+public class serialization {
+
+
+
+public static void main(String[] args) {
+try {
+main obj=new main(12,"anusha",300);
+FileOutputStream op=new FileOutputStream("D:anusha.txt");
+ObjectOutputStream os=new ObjectOutputStream(op);
+os.writeObject(obj);
+os.flush();
+os.close();
+System.out.println("serialized");
+}catch(Exception e)
+{
+System.out.println(e);
+}
+
+
+
+}
+
+
+
+}
+
+
+
+//deserialization
+
+
+
+package serialization;
+
+
+
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
+
+
+public class deserialization {
+
+
+
+public static void main(String[] args) {
+try {
+main obj1=new main(13,"anusha",3000);
+FileInputStream ip=new FileInputStream("D:anusha1.txt");
+ObjectInputStream is=new ObjectInputStream(ip);
+is.readObject();
+System.out.println(obj1.name+""+obj1.roll_no+""+obj1.salary);
+is.close();
+}catch(Exception e) {
+System.out.println(e);
+}
+
+
+
+}
+
+
+
+}
+----------------------------------------------------------------------------
+//is a serialization
+package serialization;
+
+
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+
+
+class args implements Serializable{
+public int roll_no;
+public String name;
+public args(int roll_no, String name) {
+super();
+this.roll_no = roll_no;
+this.name = name;
+}
+
+
+
+}
+
+
+
+
+class student extends isaserialization {
+public student(int roll_no, String name, String designation, int sal) {
+super();
+this.designation = designation;
+this.sal = sal;
+}
+public String designation;
+public int sal;
+
+}
+
+
+
+
+public class isaserialization {
+public static void main(String args[]) {
+try {
+student s1=new student(15,"anusha","jr.engineer",30000);
+FileOutputStream os=new FileOutputStream("D:anusha.txt");
+ObjectOutputStream vi=new ObjectOutputStream(os);
+vi.writeObject(s1);
+vi.flush();
+vi.close();
+System.out.println("serialized");
+}catch(Exception e) {
+System.out.println(e);
+}
+try {
+student s2=new student(16,"anusha","jr.engineer",30000);
+FileInputStream is=new FileInputStream("D:anusha.txt");
+ObjectInputStream as=new ObjectInputStream(is);
+as.readObject();
+as.close();
+System.out.println("success");
+}catch(Exception e) {
+System.out.println(e);
+}
+}
+
+}
+----------------------------------------------------------
+//has a serialization
+package serialization;
+
+
+
+import java.io.Serializable;
+
+
+
+class main {
+public int roll_no;
+public String name;
+public int salary;
+public main(int roll_no, String name, int salary) {
+super();
+this.roll_no = roll_no;
+this.name = name;
+this.salary = salary;
+}
+
+
+
+}
+
+
+
+package serialization;
+
+
+
+import java.io.Serializable;
+
+
+
+public class hasaserialization implements Serializable{
+public int any;
+main main;
+public hasaserialization(int any, main main) {
+super();
+this.any = any;
+this.main = main;
+}
+
+
+
+}
+-----------------------------------------------------------------------
+//static
+package serialization;
+
+
+
+import java.io.Serializable;
+
+
+
+class main {
+public int roll_no;
+public String name;
+public int salary;
+static String name1="anusha";
+public main(int roll_no, String name, int salary) {
+super();
+this.roll_no = roll_no;
+this.name = name;
+this.salary = salary;
+}
+
+
+
+}
+
+
+
+-------------------------------------------------------------------
+//serialversionuid
+Package serialization;
+
+
+
+
+import java.io.Serializable;
+class main implements Serializable{
+private static final long serialVersionUID=1L;
+int id;
+String name;
+public Student(int id, String name) {
+this.id = id;
+this.name = name;
+}
+}

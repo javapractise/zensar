@@ -13,7 +13,6 @@ public class StudentId {
 		for (int i = 0; i < s.length(); i++) {
 			for (int j = i; j < s.length(); j++) {
 				a = s.substring(i,j+1);
-				System.out.println(a);
 				if(last.charAt(0)<=a.charAt(0)) {
 					last = a;
 				}

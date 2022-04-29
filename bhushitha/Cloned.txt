@@ -1,0 +1,20 @@
+package ExceptionHandling;
+import java.util.*;
+public class ClonedArray{
+
+	public static void main(String[] args) {
+		ArrayList <String> list1 = new ArrayList<String>();
+		list1.add("A");
+		list1.add("B");
+		list1.add("C");
+	    list1.add("D");
+	    System.out.println("arraylist:" +list1);
+	    ArrayList <String> list2 = new ArrayList<String>();
+		System.out.println("copy of Arraylist is :" +list2);
+	    list1.add("E");
+	    list1.remove("D");
+	    System.out.println("Original arraylist" +list1);
+	    System.out.println("cloned array" +list2);
+	}
+
+}

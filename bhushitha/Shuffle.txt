@@ -1,0 +1,32 @@
+//shuffle elements
+
+package arraylist;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class ShuffleArray {
+
+public static void main(String[] args) {
+ArrayList<String> list1=new ArrayList();
+list1.add("A");
+list1.add("B");
+list1.add("C");
+list1.add("D");
+list1.add("E");
+
+System.out.println("befor shuffule :"+list1);
+Collections.shuffle(list1);
+System.out.println("after shuffle :"+list1);
+
+
+}
+
+
+
+}
+
+
+
+
+

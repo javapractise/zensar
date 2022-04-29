@@ -1,0 +1,407 @@
+1)What will be the output of the following program? 
+
+ 
+
+public class Test { 
+
+public static void main(String[] args) { 
+
+int count = 1; 
+
+while (count <= 15) { 
+
+System.out.println(count % 2 == 1 ? "***" : "+++++"); 
+
+++count; 
+
+}      // end while 
+
+}       // end main 
+
+} 
+
+ 
+
+ 
+
+15 times *** 
+
+15 times +++++ 
+
+8 times *** and 7 times +++++ 
+
+Both will print only once 
+
+Ans : a 
+
+ 
+
+2) Evaluate the following Java expression, if x=3, y=5, and z=10: 
+
+++z + y - y + z + x++ 
+
+A. 24 
+
+B. 23 
+
+C. 20 
+
+D. 25 
+
+Ans : a 
+
+3) What will be the output of the following program? 
+
+public class MyFirst { 
+
+public static void main(String[] args) { 
+
+MyFirst obj = new MyFirst(n); 
+
+} 
+
+static int a = 10; 
+
+static int n; 
+
+int b = 5; 
+
+int c; 
+
+public MyFirst(int m) { 
+
+System.out.println(a + ", " + b + ", " + c + ", " + n + ", " + m); 
+
+} 
+
+// Instance Block 
+
+{ 
+
+b = 30; 
+
+n = 20; 
+
+} 
+
+// Static Block 
+
+static 
+
+{ 
+
+a = 60; 
+
+} 
+
+} 
+
+ 
+
+A. 10, 5, 0, 20, 0 
+
+B. 10, 30, 20 
+
+C. 60, 5, 0, 20 
+
+D. 60, 30, 0, 20, 0 
+
+Ans : D 
+
+4.public class Test 
+
+{ 
+
+    public static void main(String[] args) 
+
+    { 
+
+        try 
+
+        { 
+
+            System.out.printf("1"); 
+
+            int sum = 9 / 0; 
+
+            System.out.printf("2"); 
+
+        } 
+
+        catch(ArithmeticException e) 
+
+        { 
+
+            System.out.printf("3"); 
+
+        } 
+
+        catch(Exception e) 
+
+        { 
+
+            System.out.printf("4"); 
+
+        } 
+
+        finally 
+
+        { 
+
+            System.out.printf("5"); 
+
+        } 
+
+    } 
+
+} 
+
+a) 1325[Text Wrapping Break]b) 1345[Text Wrapping Break]c) 1342[Text Wrapping Break]d) 135 
+
+Ans : D 
+
+ 
+
+ 
+
+5) What should be the execution order, if a class has a method, static block, instance block, and constructor, as shown below? 
+
+public class First_C { 
+
+public void myMethod() 
+
+{ 
+
+System.out.println("Method"); 
+
+} 
+
+ 
+
+{ 
+
+System.out.println(" Instance Block"); 
+
+} 
+
+ 
+
+public void First_C() 
+
+{ 
+
+System.out.println("Constructor "); 
+
+} 
+
+static { 
+
+System.out.println("static block"); 
+
+} 
+
+public static void main(String[] args) { 
+
+First_C c = new First_C(); 
+
+c.First_C(); 
+
+c.myMethod(); 
+
+} 
+
+} 
+
+Instance block, method, static block, and constructor 
+
+Method, constructor, instance block, and static block 
+
+Static block, method, instance block, and constructor 
+
+Static block, instance block, constructor, and method 
+
+Ans : a 
+
+6) Which of the following is not a Java features? 
+
+A. Dynamic 
+
+B. Architecture Neutral 
+
+C. Use of pointers 
+
+D. Object-oriented 
+
+Ans : c 
+
+ 
+
+7) Which of the following is a valid declaration of a char? 
+
+A. char ch = '\utea'; 
+
+B. char ca = 'tea'; 
+
+C. char cr = \u0223; 
+
+D. char cc = '\itea'; 
+
+Ans :a 
+
+ 
+
+8) What does the expression float a = 35 / 0 return? 
+
+A. 0 
+
+B. Not a Number 
+
+C. Infinity 
+
+D. Run time exception 
+
+Ans : c 
+
+ 
+
+9) Which of the following for loop declaration is not valid? 
+
+A. for ( int i = 99; i >= 0; i / 9 ) 
+
+B. for ( int i = 7; i <= 77; i += 7 ) 
+
+C. for ( int i = 20; i >= 2; - -i ) 
+
+D. for ( int i = 2; i <= 20; i = 2* i ) 
+
+Ans : a 
+
+ 
+
+10) In which process, a local variable has the same name as one of the instance variables? 
+
+A. Serialization 
+
+B. Variable Shadowing 
+
+C. Abstraction 
+
+D. Multi-threading 
+
+Ans : B 
+
+11. What is the output of the following program? 
+
+public class Test 
+
+{ 
+
+    private void m1() 
+
+    { 
+
+        m2(); 
+
+        System.out.printf("1"); 
+
+    } 
+
+    private void m2() 
+
+    { 
+
+        m3(); 
+
+        System.out.printf("2"); 
+
+    } 
+
+    private void m3() 
+
+    { 
+
+        System.out.printf("3"); 
+
+        try 
+
+        { 
+
+            int sum = 4/0; 
+
+            System.out.printf("4"); 
+
+        } 
+
+        catch(ArithmeticException e) 
+
+        { 
+
+            System.out.printf("5"); 
+
+        } 
+
+           
+
+           
+
+        System.out.printf("7"); 
+
+    } 
+
+    public static void main(String[] args) 
+
+    { 
+
+        Test obj = new Test(); 
+
+        obj.m1(); 
+
+    } 
+
+} 
+
+ 
+
+a) 35721[Text Wrapping Break]b) 354721[Text Wrapping Break]c) 3521[Text Wrapping Break]d) 135 
+
+Ans : D 
+
+ 
+
+12) What will be the output of the following program 
+
+public class Test2 { 
+
+public static void main(String[] args) { 
+
+StringBuffer s1 = new StringBuffer("Complete"); 
+
+s1.setCharAt(1,'i'); 
+
+s1.setCharAt(7,'d'); 
+
+System.out.println(s1); 
+
+} 
+
+} 
+
+ 
+
+A. Complete 
+
+B. Iomplede 
+
+C. Cimpletd 
+
+D. Coipletd 
+
+Ans : c 
+
+ 
+
+ 
+
+ 
+
+ 

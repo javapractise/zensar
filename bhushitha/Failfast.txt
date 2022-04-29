@@ -1,0 +1,26 @@
+//failsfast
+package arraylist;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class FailFast {
+
+
+
+public static void main(String[] args) {
+Map<String, String> cityCode = new HashMap<String, String>();
+cityCode.put("A", "B");
+cityCode.put("C", "D");
+cityCode.put("E", "F");
+
+Iterator itr = cityCode.keySet().iterator();
+
+while (iterator.hasNext()) {
+System.out.println(cityCode.get(itr.next()));
+}
+}
+}

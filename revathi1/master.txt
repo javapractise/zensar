@@ -16,7 +16,7 @@ b.	15 times +++++
 c.	8 times *** and 7 times +++++
 d.	Both will print only once
 
-Ans:c
+Ans:C
 
 
 2) Evaluate the following Java expression, if x=3, y=5, and z=10:

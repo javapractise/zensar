@@ -1,0 +1,24 @@
+//retrive
+package arraylist;
+import java.util.ArrayList;
+public class Retrieve {
+public static void main(String[] args) {
+ArrayList<String> list1=new ArrayList();
+list1.add("A");
+list1.add("B");
+list1.add("C");
+list1.add("D");
+System.out.println(list1.get(1));
+System.out.println(list1.get(3));
+
+
+}
+
+
+
+}
+
+
+
+
+

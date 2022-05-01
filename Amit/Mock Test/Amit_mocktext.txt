@@ -1,0 +1,338 @@
+1)What will be the output of the following program? 
+
+ 
+
+public class Test { 
+
+public static void main(String[] args) { 
+
+int count = 1; 
+
+while (count <= 15) { 
+
+System.out.println(count % 2 == 1 ? "***" : "+++++"); 
+
+++count; 
+
+}      // end while 
+
+}       // end main 
+
+} 
+
+ 
+
+ 
+Ans. :-
+
+8 times *** and 7 times +++++ 
+
+
+2) Evaluate the following Java expression, if x=3, y=5, and z=10: 
+
+++z + y - y + z + x++ 
+
+Ans.:-
+
+D. 25 
+
+
+
+3) What will be the output of the following program? 
+
+public class MyFirst { 
+
+public static void main(String[] args) { 
+
+MyFirst obj = new MyFirst(n); 
+
+} 
+
+static int a = 10; 
+
+static int n; 
+
+int b = 5; 
+
+int c; 
+
+public MyFirst(int m) { 
+
+System.out.println(a + ", " + b + ", " + c + ", " + n + ", " + m); 
+
+} 
+
+// Instance Block 
+
+{ 
+
+b = 30; 
+
+n = 20; 
+
+} 
+
+// Static Block 
+
+static 
+
+{ 
+
+a = 60; 
+
+} 
+
+} 
+
+ 
+Ans.:-
+
+D. 60, 30, 0, 20, 0 
+
+
+4.public class Test 
+
+{ 
+
+    public static void main(String[] args) 
+
+    { 
+
+        try 
+
+        { 
+
+            System.out.printf("1"); 
+
+            int sum = 9 / 0; 
+
+            System.out.printf("2"); 
+
+        } 
+
+        catch(ArithmeticException e) 
+
+        { 
+
+            System.out.printf("3"); 
+
+        } 
+
+        catch(Exception e) 
+
+        { 
+
+            System.out.printf("4"); 
+
+        } 
+
+        finally 
+
+        { 
+
+            System.out.printf("5"); 
+
+        } 
+
+    } 
+
+} 
+
+Ans.:-
+d) 135 
+
+
+5) What should be the execution order, if a class has a method, static block, instance block, and constructor, as shown below? 
+
+public class First_C { 
+
+public void myMethod() 
+
+{ 
+
+System.out.println("Method"); 
+
+} 
+
+ 
+
+{ 
+
+System.out.println(" Instance Block"); 
+
+} 
+
+ 
+
+public void First_C() 
+
+{ 
+
+System.out.println("Constructor "); 
+
+} 
+
+static { 
+
+System.out.println("static block"); 
+
+} 
+
+public static void main(String[] args) { 
+
+First_C c = new First_C(); 
+
+c.First_C(); 
+
+c.myMethod(); 
+
+} 
+
+} 
+
+Ans.:-
+
+Static block, instance block, constructor, and method 
+
+
+6) Which of the following is not a Java features? 
+
+Ans.:-
+
+C. Use of pointers 
+
+
+ 
+
+7) Which of the following is a valid declaration of a char? 
+Ans.:-
+A. char ch = '\utea'; 
+
+ 
+
+8) What does the expression float a = 35 / 0 return? 
+Ans.:-
+
+D. Run time exception 
+
+ 
+
+9) Which of the following for loop declaration is not valid? 
+
+Ans.:-
+A. for ( int i = 99; i >= 0; i / 9 ) 
+
+
+ 
+
+10) In which process, a local variable has the same name as one of the instance variables? 
+
+Ans.:-
+
+B. Variable Shadowing 
+
+
+11. What is the output of the following program? 
+
+public class Test 
+
+{ 
+
+    private void m1() 
+
+    { 
+
+        m2(); 
+
+        System.out.printf("1"); 
+
+    } 
+
+    private void m2() 
+
+    { 
+
+        m3(); 
+
+        System.out.printf("2"); 
+
+    } 
+
+    private void m3() 
+
+    { 
+
+        System.out.printf("3"); 
+
+        try 
+
+        { 
+
+            int sum = 4/0; 
+
+            System.out.printf("4"); 
+
+        } 
+
+        catch(ArithmeticException e) 
+
+        { 
+
+            System.out.printf("5"); 
+
+        } 
+
+           
+
+           
+
+        System.out.printf("7"); 
+
+    } 
+
+    public static void main(String[] args) 
+
+    { 
+
+        Test obj = new Test(); 
+
+        obj.m1(); 
+
+    } 
+
+} 
+Ans.:-
+a) 35721[Text Wrapping Break] 
+
+ 
+
+12) What will be the output of the following program 
+
+public class Test2 { 
+
+public static void main(String[] args) { 
+
+StringBuffer s1 = new StringBuffer("Complete"); 
+
+s1.setCharAt(1,'i'); 
+
+s1.setCharAt(7,'d'); 
+
+System.out.println(s1); 
+
+} 
+
+} 
+
+Ans.:-
+
+C. Cimpletd 
+
+
+ 
+
+ 
+
+ 
+
+ 

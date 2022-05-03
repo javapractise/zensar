@@ -1,0 +1,30 @@
+//searching
+package arraylist;
+import java.util.ArrayList;
+
+public class Searching {
+
+public static void main(String[] args) {
+ArrayList <String> lits1=new ArrayList();
+list1.add("A");
+list1.add("B");
+list1.add("C");
+list1.add("D");
+l1.add(25);
+Boolean ans=list1.contains(10);
+if(ans)
+{
+System.out.println("element found :"+ans);
+}
+else
+{
+System.out.println("element not found");
+}
+
+
+
+}
+
+
+
+}

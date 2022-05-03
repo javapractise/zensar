@@ -1,0 +1,18 @@
+package ExceptionHandling;
+import java.util.*;
+public class IterateArray {
+
+	public static void main(String[] args) {
+	LinkedList <String> list1 = new LinkedList<String>();
+		list1.add("A");
+		list1.add("B");
+		list1.add("C");
+	    list1.add("D");
+	    Iterator itr = list1.listIterator(1);
+	    while(itr.hasNext()) {
+	    	System.out.println(itr.next());    
+	    }
+	    
+	}
+
+}

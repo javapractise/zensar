@@ -1,0 +1,281 @@
+//copying
+package arraylist;
+
+import java.util.ArrayList;
+
+public class search {
+
+	public static void main(String[] args) {
+	ArrayList<Integer> l1=new ArrayList();
+	l1.add(10);
+	l1.add(11);
+	l1.add(15);
+	l1.add(20);
+	l1.add(25);
+	for(Integer op1:l1)
+	{
+	System.out.println("first list :"+op1);
+	}
+	ArrayList<Integer> L2=l1;
+	
+	for(Integer op:L2)
+	{
+		System.out.println("second list :"+op);
+	}
+	}
+
+}
+________________________________________________________________
+//retrive
+
+package arraylist;
+
+import java.util.ArrayList;
+
+public class search {
+
+	public static void main(String[] args) {
+	ArrayList<Integer> l1=new ArrayList();
+	l1.add(10);
+	l1.add(11);
+	l1.add(15);
+	l1.add(20);
+	l1.add(25);
+	
+	System.out.println(l1.get(1));
+	System.out.println(l1.get(3));
+	
+	
+	}
+
+}
+
+__________________________________________________________________________
+//shuffle elements
+
+package arraylist;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class search {
+
+	public static void main(String[] args) {
+	ArrayList<Integer> l1=new ArrayList();
+	l1.add(10);
+	l1.add(11);
+	l1.add(15);
+	l1.add(20);
+	l1.add(25);
+	
+	System.out.println("befor shuffule :"+l1);
+	Collections.shuffle(l1);
+	System.out.println("after shuffle :"+l1);
+	
+	
+	}
+
+}
+_________________________________________________________
+//reverse elements
+
+package arraylist;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class search {
+
+	public static void main(String[] args) {
+	ArrayList<Integer> l1=new ArrayList();
+	l1.add(10);
+	l1.add(11);
+	l1.add(15);
+	l1.add(20);
+	l1.add(25);
+	
+	System.out.println("befor reverse :"+l1);
+	Collections.reverse(l1);
+	System.out.println("after reverse :"+l1);
+	
+	
+	}
+
+}
+______________________________________________________________________
+//first and last index
+
+package arraylist;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class search {
+
+	public static void main(String[] args) {
+	ArrayList<Integer> l1=new ArrayList();
+	l1.add(10);
+	l1.add(11);
+	l1.add(15);
+	l1.add(20);
+	l1.add(25);
+	System.out.println(l1.get(0));
+	int n=l1.size();
+	System.out.println(l1.get(n-1));
+
+}
+}
+____________________________________________________
+//failsfast
+package arraylist;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class search {
+
+	public static void main(String[] args) {
+		Map<String, String> cityCode = new HashMap<String, String>();
+		cityCode.put("meggi", "deeksha");
+		cityCode.put("ramya", "aswini");
+		cityCode.put("neelima", "hema");
+
+		Iterator iterator = cityCode.keySet().iterator();
+
+		while (iterator.hasNext()) {
+			System.out.println(cityCode.get(iterator.next()));
+		}
+}
+}
+
+_______________________________________________________
+package arraylist;
+import java.util.*;
+
+
+public class search{
+
+public static void main(String[] args) {
+ArrayList <Integer> list1 = new ArrayList<Integer>();
+list1.add(10);
+list1.add(11);
+list1.add(15);
+list1.add(20);
+list1.add(25);
+System.out.println("arraylist:" +list1);
+String new_list1 = 30;
+list1.set(3, new_list1);
+int num= list1.size();
+System.out.println("replace fourth element with '45' :");
+for(int i=0;i<num;i++)
+{
+System.out.println(list1.get(i));
+}
+}
+
+
+
+}
+____________________________________________________________________________
+package arraylist;
+import java.util.*;
+
+public class IterateArray {
+
+public static void main(String[] args) {
+LinkedList <Integer> list1 = new LinkedList<Integer>();
+list1.add(10);
+list1.add(11);
+list1.add(15);
+list1.add(20);
+list1.add(25);
+Iterator itr = list1.listIterator(1);
+while(itr.hasNext()) {
+System.out.println(itr.next());
+}
+
+}
+
+
+
+}
+________________________________________________________________
+package arraylist;
+import java.util.*;
+public class CompareArray {
+
+public static void main(String[] args) {
+ArrayList <Integer> list1 = new ArrayList<Integer>();
+list1.add(10);
+list1.add(11);
+list1.add(15);
+list1.add(20);
+list1.add(25);
+ArrayList <String> list2 = new ArrayList<String>();
+list1.add(10);
+list1.add(11);
+list1.add(15);
+list1.add(20);
+list1.add(25);
+boolean value = list1.equals(list2);
+System.out.println(value);
+}
+
+
+
+}
+_____________________________________________________________________
+package arraylist;
+import java.util.*;
+public class search{
+
+public static void main(String[] args) {
+ArrayList <Integer> list1 = new ArrayList<Integer>();
+list1.add(10);
+list1.add(11);
+list1.add(15);
+list1.add(20);
+list1.add(25);
+System.out.println("arraylist:" +list1);
+ArrayList <Integer> list2 = new ArrayList<Integer>();
+System.out.println("copy of Arraylist is :" +list2);
+list1.add(55);
+list1.remove(15);
+System.out.println("Original arraylist" +list1);
+System.out.println("cloned array" +list2);
+}
+
+
+
+}
+_____________________________________________________
+//searching
+package arraylist;
+
+import java.util.ArrayList;
+
+public class search {
+
+	public static void main(String[] args) {
+	ArrayList l1=new ArrayList();
+	l1.add(10);
+	l1.add(11);
+	l1.add(15);
+	l1.add(20);
+	l1.add(25);
+	Boolean ans=l1.contains(10);
+	if(ans)
+	{
+		System.out.println("element found :"+ans);
+	}
+	else
+	{
+		System.out.println("element not found");
+	}
+
+	}
+
+}

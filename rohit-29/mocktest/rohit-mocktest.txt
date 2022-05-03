@@ -1,0 +1,228 @@
+1)What will be the output of the following program?
+
+1. public class Test {
+2. public static void main(String[] args) {
+3. int count = 1;
+4. while (count <= 15) {
+5. System.out.println(count % 2 == 1 ? "***" : "+++++");
+6. ++count;
+7. }      // end while
+8. }       // end main
+9. }
+
+
+a. 15 times ***
+b. 15 times +++++
+c. 8 times *** and 7 times +++++
+d. Both will print only once
+
+ans:c. 8 times *** and 7 times +++++
+
+
+2) Evaluate the following Java expression, if x=3, y=5, and z=10:
+++z + y - y + z + x++
+A. 24
+B. 23
+C. 20
+D. 25
+
+ans:A. 24
+
+
+3) What will be the output of the following program?
+1. public class MyFirst {
+2. public static void main(String[] args) {
+3. MyFirst obj = new MyFirst(n);
+4. }
+5. static int a = 10;
+6. static int n;
+7. int b = 5;
+8. int c;
+9. public MyFirst(int m) {
+10. System.out.println(a + ", " + b + ", " + c + ", " + n + ", " + m);
+11. }
+12. // Instance Block
+13. {
+14. b = 30;
+15. n = 20;
+16. }
+17. // Static Block
+18. static
+19. {
+20. a = 60;
+21. }
+22. }
+
+A. 10, 5, 0, 20, 0
+B. 10, 30, 20
+C. 60, 5, 0, 20
+
+ans:D. 60, 30, 0, 20, 0
+
+
+4.public class Test
+{
+    public static void main(String[] args)
+    {
+        try
+        {
+            System.out.printf("1");
+            int sum = 9 / 0;
+            System.out.printf("2");
+        }
+        catch(ArithmeticException e)
+        {
+            System.out.printf("3");
+        }
+        catch(Exception e)
+        {
+            System.out.printf("4");
+        }
+        finally
+        {
+            System.out.printf("5");
+        }
+    }
+}
+a) 1325
+b) 1345
+c) 1342
+d) 135
+
+ans:d) 135
+
+
+5) What should be the execution order, if a class has a method, static block, instance block, and constructor, as shown below?
+1. public class First_C {
+2. public void myMethod()
+3. {
+4. System.out.println("Method");
+5. }
+6. 
+7. {
+8. System.out.println(" Instance Block");
+9. }
+10. 
+11. public void First_C()
+12. {
+13. System.out.println("Constructor ");
+14. }
+15. static {
+16. System.out.println("static block");
+17. }
+18. public static void main(String[] args) {
+19. First_C c = new First_C();
+20. c.First_C();
+21. c.myMethod();
+22. }
+23. }
+a. Instance block, method, static block, and constructor
+b. Method, constructor, instance block, and static block
+c. Static block, method, instance block, and constructor
+d. Static block, instance block, constructor, and method
+
+
+6) Which of the following is not a Java features?
+A. Dynamic
+B. Architecture Neutral
+C. Use of pointers
+D. Object-oriented
+
+ans:C. Use of pointers
+
+7) Which of the following is a valid declaration of a char?
+A. char ch = '\utea';
+B. char ca = 'tea';
+C. char cr = \u0223;
+D. char cc = '\itea';
+
+ans:A. char ch = '\utea';
+
+
+8) What does the expression float a = 35 / 0 return?
+A. 0
+B. Not a Number
+C. Infinity
+D. Run time exception
+
+ans:D. Run time exception
+
+
+9) Which of the following for loop declaration is not valid?
+A. for ( int i = 99; i >= 0; i / 9 )
+B. for ( int i = 7; i <= 77; i += 7 )
+C. for ( int i = 20; i >= 2; - -i )
+D. for ( int i = 2; i <= 20; i = 2* i )
+
+ans:A. for ( int i = 99; i >= 0; i / 9 )
+
+10) In which process, a local variable has the same name as one of the instance variables?
+A. Serialization
+B. Variable Shadowing
+C. Abstraction
+D. Multi-threading
+
+ans:
+
+
+11. What is the output of the following program?
+public class Test
+{
+    private void m1()
+    {
+        m2();
+        System.out.printf("1");
+    }
+    private void m2()
+    {
+        m3();
+        System.out.printf("2");
+    }
+    private void m3()
+    {
+        System.out.printf("3");
+        try
+        {
+            int sum = 4/0;
+            System.out.printf("4");
+        }
+        catch(ArithmeticException e)
+        {
+            System.out.printf("5");
+        }
+          
+          
+        System.out.printf("7");
+    }
+    public static void main(String[] args)
+    {
+        Test obj = new Test();
+        obj.m1();
+    }
+}
+a) 35721
+b) 354721
+c) 3521
+d) 35
+
+ans:a) 35721
+
+12) What will be the output of the following program
+1. public class Test2 {
+2. public static void main(String[] args) {
+3. StringBuffer s1 = new StringBuffer("Complete");
+4. s1.setCharAt(1,'i');
+5. s1.setCharAt(7,'d');
+6. System.out.println(s1);
+7. }
+8. }
+
+A. Complete
+B. Iomplede
+C. Cimpletd
+D. Coipletd
+
+ans:C. Cimpletd
+
+
+

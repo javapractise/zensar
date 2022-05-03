@@ -1,0 +1,20 @@
+package ExceptionHandling;
+import java.util.*;
+public class CompareArray {
+
+	public static void main(String[] args) {
+		ArrayList <String> list1 = new ArrayList<String>();
+		list1.add("A");
+		list1.add("B");
+		list1.add("C");
+	    list1.add("D");
+	    ArrayList <String> list2 = new ArrayList<String>();
+		list2.add("A");
+		list2.add("B");
+		list2.add("C");
+	    list2.add("D");
+	    boolean value = list1.equals(list2);
+	    System.out.println(value);
+	}
+
+}

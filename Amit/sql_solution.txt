@@ -1,0 +1,44 @@
+1 . To create a schema
+CREATE SCHEMA employee
+
+2. To create a table
+CREATE TABLE employee.emp (emp_id INT NOT NULL, emp_name VARCHAR(20) NOT NULL, location VARCHAR(45) NOT NULL, designation VARCHAR(45) NOT NULL, PRIMARY KEY (emp_id))
+
+ 
+3. To insert values into the emp table
+insert into employee.emp(emp_id, emp_name, location, designation)
+ values(101, "John", "Mumbai", "Manager")
+
+insert into employee.emp(emp_id, emp_name, location, designation)
+ values(102, "Mike", "Pune", "Developer")
+
+insert into employee.emp(emp_id, emp_name, location, designation)
+ values(201, "David", "Hydrabad", "HR")
+
+insert into employee.emp(emp_id, emp_name, location, designation)
+ values(203, "Tim", "Banglore", "Tester")
+
+insert into employee.emp(emp_id, emp_name, location, designation)
+ values(303, "Steve", "Delhi", "Accountant")
+
+4. To check the values inserted into the tables
+select * from employee.emp
+
+5. To updtae the designation tester whose employee id is 201
+update employee.emp set designation = "Tester" where emp_id=201
+
+6. to check the update 
+select * from employee.emp
+
+7. To update the location to Pune and designation to developer whose employee id is 303.
+update employee.emp set location = "Pune", designation = "Developer" where emp_id = 303
+
+8. Delete record whose emp_id is 203
+delete from employee.emp where emp_id = 203
+
+9. to check the delete
+select * from employee.emp
+
+10. To drop the table
+drop table employee.emp
+

@@ -1,0 +1,17 @@
+package javapractice;
+import java .util.ArrayList;
+public class Runnable{
+
+	public static void main(String[] args) {
+		Runnable r1 = new Runnable() {
+
+			public void run() {
+				System.out.println("Runnable");
+			}
+		};
+		Runnable r2 = ()->{ System.out.println("Runnable lamda Expression");
+		};
+		new Thread(r1).start();
+		new Thread(r2).start();
+	}
+	}

@@ -1,0 +1,29 @@
+package javapractice;
+
+public interface Task1 {
+ default  String  name() {
+	 System.out.println("Student name is ");
+	 return "bhushitha" ;
+	 
+ }
+ static String Studentdept(String dept)
+ {
+	System.out.println("dept");
+	return "developer";
+ }
+ abstract String Displayy(String msg);
+}
+class Main implements Task1
+{
+	abstract String Display(String msg)
+	{
+	   System.out.println("msg");
+		return "done" ;
+	}
+	public static void main(String[] args) {
+		Main m= new Main();
+		System.out.println(m.name());
+		System.out.println(m.Display());
+		System.out.println(Tsk1.Studentdept("Student department"));
+	}
+}

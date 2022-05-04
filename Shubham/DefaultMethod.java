@@ -1,11 +1,10 @@
-package com.java.java8feature;
+import java.util.*;
+import java.util.lang;
 
 @FunctionalInterface
 interface Drawing {
 	void Draw();
 
-	//In Functional interface we can only one abstract method and number of default Method
-	// void DrawAnother();
 	default void draw1() {
 		System.out.println("draw1");
 	}

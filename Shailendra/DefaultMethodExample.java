@@ -4,7 +4,7 @@ package com.java.java8feature;
 interface Drawing {
 	void Draw();
 
-	//In function interface we can only one abstract method and number of default Method
+	//In Functional interface we can only one abstract method and number of default Method
 	// void DrawAnother();
 	default void draw1() {
 		System.out.println("draw1");

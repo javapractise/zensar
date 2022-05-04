@@ -1,0 +1,43 @@
+package MySQL;
+
+
+
+@FunctionalInterface
+interface Task1 {
+// abstract method
+public void running();
+
+
+
+// static method
+public static void color() {
+System.out.println("peoples in school");
+}
+
+
+
+// default method
+default void type() {
+System.out.println("no.of students ");
+}
+}
+
+
+
+public class Task implements Task1 {
+public void running() {
+System.out.println("no.of faculty");
+}
+
+
+
+public static void main(String[] args) {
+Task task = new Task();
+
+
+
+task.type();
+task.running();
+}
+}
+

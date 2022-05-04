@@ -17,9 +17,9 @@ public class StreamLembda {
 		list.add(5);
 		list.add(6);
 		list.add(7);
-	List<Integer> newList =	list.stream().filter(e ->e%2 == 0).collect(Collectors.toList());
+	List<Integer> newList =	list.stream().filter(e ->e%2 == 0).collect(Collectors.toList());//Using filter
 		System.out.println(newList);
-	List<Integer> squre =	list.stream().map(e-> e*e).collect(Collectors.toList());
+	List<Integer> squreList =	list.stream().map(e-> e*e).collect(Collectors.toList());//using map
 	System.out.println(squre);
 	}
 

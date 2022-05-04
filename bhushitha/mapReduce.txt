@@ -1,0 +1,33 @@
+package javapractice;
+import java .util.ArrayList;
+import java.util.stream.Stream;
+import java.util.*;
+public class MapReduce {
+
+	public static void main(String[] args) {
+	ArrayList<Integer> Mylist = new ArrayList();
+	Mylist.add(1);
+	Mylist.add(2);
+	Mylist.add(3);
+	Mylist.add(4);
+	Mylist.add(5);
+	Stream<Integer> MyStream = Mylist.stream();
+	Integer[] MyArray = {1,2,3,4,5};
+	Stream <Integer> myStream = Arrays.stream(MyArray);
+	String[] myArray = new String [] {"a","b","c"};
+	Stream <String> newStream = Arrays.stream(myArray);
+	Stream<String>myNewStream = newStream.map(s->s.toUpperCase());
+	String[] myNewArray = myNewStream.toArray(String[]::new);
+	int newArray[] = {1,2,3,4,5};
+	int sum = ((Object) Arrays.stream(myArray)).sum();
+	String [] new1Array = {"this ", "is ","main class"};
+	String result = Arrays.stream(MyArray).reduce(" ", (a,b) -> a + b );
+	}
+	
+	
+	
+	
+	
+	
+}
+	

@@ -1,6 +1,6 @@
 Given a list of integers, find the total number of elements present in the list using Stream functions?
 
-package javaprogram;
+
 import java.util.*;
 import java.util.stream.*;
 public class Javaprogram5 {

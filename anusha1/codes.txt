@@ -1,0 +1,124 @@
+package practice;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+class Employees {
+   int id;
+   String name;
+   double salary;
+   public Employees(int id, String name, double salary) {
+      super();
+      this.id = id;
+      this.name = name;
+      this.salary = salary;
+   }
+}
+public class LambdaComparator{
+   public static void main(String[] args) {
+      List<Employees> list = new ArrayList<Employees>();
+
+      list.add(new Employees(001, "mani", 2500));
+      list.add(new Employees(12, "deeksha", 3000));
+      list.add(new Employees(003, "meghana", 4000));
+      System.out.println("Sorting the employee list based on the name");
+
+      Collections.sort(list, (p1, p2) -> {
+         return p1.name.compareTo(p2.name); 
+      }); 
+      for(Employees e : list) {
+         System.out.println(e.id + " " + e.name + " " + e.salary);
+      }
+   } 
+   
+anusha/evenodd.java
+
+interface EvenOdd {
+	void check(int a);
+}
+
+public class LambdaExample1 {
+	public static void main(String[] args) {
+		// Lambda Expression
+		EvenOdd evenOdd = (int a) -> {
+			if(a%2==0){
+				System.out.println("Number "+a+" is even.");
+			}else{
+				System.out.println("Number "+a+" is odd.");
+			}
+		};
+
+		//Check numbers
+		evenOdd.check(21);
+		evenOdd.check(12);
+	}
+}  
+  
+anusha/filter.java
+
+package practice;
+
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
+public class EmployeePredicates
+{
+    public static Predicate<Employee> isAdultMale() {
+        return p -> p.getAge() > 21 && p.getGender().equalsIgnoreCase("M");
+    }
+
+    public static Predicate<Employee> isAdultFemale() {
+        return p -> p.getAge() > 18 && p.getGender().equalsIgnoreCase("F");
+    }
+
+    public static Predicate<Employee> isAgeMoreThan(Integer age) {
+        return p -> p.getAge() > age;
+    }
+
+    public static List<Employee> filterEmployees (List<Employee> employees,
+                                                Predicate<Employee> predicate)
+    {
+        return employees.stream()
+                    .filter( predicate )
+                    .collect(Collectors.<Employee>toList());
+    } 
+  
+anusha/iterator.java
+
+package practice;
+
+class IterateArrayList {
+  public static void main(String[] args) {
+
+    ArrayList<String> names = new ArrayList<String>();
+    names.add("mani");
+    names.add("deeksha");
+    names.add("meghana");
+
+    names.forEach((n) -> {
+      System.out.println(n + ", ");
+    });
+  }
+}  
+   
+anusha/runnable.java
+
+package practice;
+
+public class RunnableLambda{
+	   public static void main(String[] args) {
+	      Runnable r1 = new Runnable() {
+	         @Override
+	         public void run() { 
+	            System.out.println("Runnable with Anonymous Class");
+	         }
+	      }
+	      Runnable r2 = () -> {  
+	         System.out.println("Runnable with Lambda Expression");
+	      };
+	      new Thread(r1).start();
+	      new Thread(r2).start();
+	   }
+	}  

@@ -1,0 +1,33 @@
+package javapractice;
+
+
+
+
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+
+
+public class Arraylist {
+
+
+
+public static void main(String[] args) {
+
+
+
+List<String> words = Arrays.asList("baby1", "baby2", "baby3", "baby1", "baby", "baby2" ,"baby4", "baby4" );
+
+
+
+Map<String, Long> output = words.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+
+
+System.out.println(output);
+}
+
+
+
+}

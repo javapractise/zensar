@@ -1,0 +1,84 @@
+class Nested 
+//it can be anything interface or normal class 
+{
+	void methodnested()
+	{
+		System.out.println("nesteded");
+
+
+	}
+
+}
+public class AnonymousInnerClass {
+
+	public static void main(String[] args) {
+	Nested n=new Nested();
+	n.methodnested();
+	}
+
+} 
+   
+Anusha/Nested.java
+class OuterClass
+{
+	public OuterClass() {
+	System.out.println("outer class");
+	}
+	class InnerClass
+	{
+		public InnerClass() {
+		System.out.println("innner class");
+		}
+	}
+}
+
+
+public class Nested {
+
+	public static void main(String[] args) {
+		OuterClass o =new OuterClass();
+
+		OuterClass.InnerClass i =o.new InnerClass();
+
+	}
+
+} 
+  
+Anusha/NestedInterface.java
+
+interface emp
+{
+	void data();
+	interface salary
+	{	
+		void amount();
+	}
+	interface department
+	{
+		void dept();
+	}
+}
+
+class company implements emp{
+	public void data()
+	{
+		System.out.println("This is the data of the employee");
+	}
+	public void amount()
+	{
+		System.out.println("Salary amount of the employee is 25000");
+	}
+	public void dept()
+	{
+		System.out.println("Department of the employee is'software'");
+	}
+}
+public class NestedInterface {
+	public static void main(String[] args)
+	{
+		company c=new company();
+		c.data();
+		c.amount();
+		c.dept();
+	}
+}

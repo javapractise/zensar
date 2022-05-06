@@ -33,3 +33,18 @@ public class Toys {
 		
 	}
 }
+
+
+D:\gitpractise\zensar\rohit-5>java Toys.java
+Enter the no of elements:
+7
+1
+5
+4
+3
+2
+1
+6
+Enter the amount u have to by toys:
+6
+the total number of toys they can buy eith the amount are:3

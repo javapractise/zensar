@@ -1,5 +1,3 @@
-package com.java.problem;
-
 import java.util.Scanner;
 
 public class TestToys {
@@ -9,7 +7,6 @@ public class TestToys {
 			int[] prices = new int[n];
 			for (int i = 0; i < n; i++)
 				prices[i] = sc.nextInt();
-			System.out.println();
 			int money = sc.nextInt();
 			System.out.println(getMaxToys(prices, money));
 		}

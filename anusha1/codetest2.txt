@@ -27,3 +27,5 @@ System.out.print( numofToys(price, N, K));
 }
 }
 
+output:-
+9

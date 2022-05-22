@@ -1,0 +1,51 @@
+package javapractice;
+import java.util.*;
+ 
+	class Employee
+	{
+		int id;
+		String name;
+		int age;
+
+		Employee(int id, String name, int age)
+		{
+			this. id = id;
+			this.name = name;
+			this.age = age;
+		}
+	}
+
+	class AgeComparator implements Comparator<Employee>
+	{
+		public int compare(Employee e1, Employee e2)
+		{
+			if(e1.age == e2.age)
+			{	return 0;
+			}
+			else if(e1.age>e2.age)
+			{	return 1;
+			}
+			
+			else {
+				return -1;
+				}
+		}
+	}
+
+	 class ComparatorExample
+	{
+		public static void main(String[] args)
+		{
+			ArrayList<Employee> l = new ArrayList<Employee>();
+			l.add(new Employee(501, "abc", 22));
+			l.add(new Employee(502, "def", 24));
+			l.add(new Employee(503, "ghi", 28));
+
+			System.out.println("Sorting by age : ");
+			Collections.sort(l, new AgeComparator());
+			for(Employee emp:l){
+				System.out.println(emp.id+" "+emp.name+" "+emp.age);
+			}
+		}
+	}
+ 
